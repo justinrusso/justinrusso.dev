@@ -4,7 +4,11 @@ module.exports = {
       ? ["./pages/**/*.{js,jsx,ts,tsx}", "./components/**/*.{js,jsx,ts,tsx}"]
       : undefined,
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        dark: { raw: "(prefers-color-scheme: dark)" },
+      },
+    },
   },
   variants: {},
   plugins: [],
