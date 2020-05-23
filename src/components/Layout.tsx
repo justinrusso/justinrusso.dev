@@ -35,17 +35,19 @@ export const Layout: React.FunctionComponent<Props> = ({
         </div>
       </header>
       <div className="flex flex-1 min-h-0">
-        <nav className="hidden lg:block w-2/12 flex flex-row">
-          <div className="font-semibold text-xl tracking-tight">
+        <nav className="hidden lg:block w-2/12 flex flex-row shadow-lg">
+          <div className="font-semibold text-xl tracking-tight text-center">
             Justin Russo
           </div>
-          <Link href="/">
-            <a>Home</a>
-          </Link>{" "}
-          |{" "}
-          <Link href="/about">
-            <a>About</a>
-          </Link>{" "}
+          <div>
+            <Link href="/">
+              <a>Home</a>
+            </Link>{" "}
+            |{" "}
+            <Link href="/about">
+              <a>About</a>
+            </Link>{" "}
+          </div>
         </nav>
         <div className="flex-1 lg:px-10 lg:pt-2 overflow-y-scroll">
           {children}
