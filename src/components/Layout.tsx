@@ -34,7 +34,7 @@ export const Layout: React.FunctionComponent<Props> = ({
           </button>
         </div>
       </header>
-      <div className="flex flex-1">
+      <div className="flex flex-1 min-h-0">
         <nav className="hidden lg:block w-2/12 flex flex-row">
           <div className="font-semibold text-xl tracking-tight">
             Justin Russo
@@ -47,8 +47,8 @@ export const Layout: React.FunctionComponent<Props> = ({
             <a>About</a>
           </Link>{" "}
         </nav>
-        <div className="flex-1">
-          <div className="lg:mx-10 lg:mt-2">{children}</div>
+        <div className="flex-1 lg:px-10 lg:pt-2 overflow-y-scroll">
+          {children}
         </div>
       </div>
     </div>
