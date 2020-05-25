@@ -15,7 +15,7 @@ export const Layout: React.FunctionComponent<Props> = ({
       <title>{title}</title>
     </Head>
     <div className="flex flex-col h-full">
-      <header className="flex items-center justify-between flex-wrap p-6 lg:hidden dark:bg-gray-800 shadow-lg">
+      <header className="flex items-center justify-between flex-wrap p-6 lg:hidden bg-white dark:bg-gray-800 shadow-lg">
         <div className="flex items-center flex-shrink-0 mr-6">
           <h1 className="font-semibold text-xl tracking-tight">Justin Russo</h1>
         </div>
@@ -33,7 +33,7 @@ export const Layout: React.FunctionComponent<Props> = ({
         </div>
       </header>
       <div className="flex flex-1 min-h-0">
-        <nav className="hidden lg:block w-2/12 flex flex-row shadow-lg dark:bg-gray-900">
+        <nav className="hidden lg:block w-2/12 flex flex-row shadow-lg bg-white dark:bg-gray-900">
           <h1 className="font-semibold text-xl tracking-tight text-center">
             Justin Russo
           </h1>

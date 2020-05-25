@@ -8,7 +8,7 @@ const IndexPage = () => (
     exit={{ y: "-100%" }}
     transition={{ duration: 2 }}
   >
-    <div className="lg:rounded-t-lg overflow-hidden shadow-lg min-w-full min-h-screen dark:bg-gray-900">
+    <div className="lg:rounded-t-lg overflow-hidden shadow-lg min-w-full min-h-screen bg-white dark:bg-gray-900">
       <div className="px-16 py-12">
         <h2 className="font-bold text-3xl mb-2 border-solid border-b-2 border-gray-900 dark:border-gray-700">
           Home
