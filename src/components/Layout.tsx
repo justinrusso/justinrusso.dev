@@ -49,7 +49,7 @@ export const Layout: React.FunctionComponent<Props> = ({
             </Link>{" "}
           </div>
         </nav>
-        <div className="flex-1 lg:px-10 lg:pt-2 overflow-y-scroll">
+        <div className="flex-1 lg:px-10 lg:pt-10 overflow-y-scroll">
           {children}
         </div>
       </div>
