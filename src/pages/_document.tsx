@@ -16,7 +16,7 @@ export default class MyDocument extends Document {
           `}
           </style>
         </Head>
-        <body className="bg-gray-100 dark:bg-black h-screen">
+        <body className="bg-gray-100 dark:bg-black h-screen dark:text-gray-100">
           <Main />
           <NextScript />
         </body>
