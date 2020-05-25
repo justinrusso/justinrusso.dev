@@ -10,7 +10,9 @@ const IndexPage = () => (
   >
     <div className="lg:rounded-t-lg overflow-hidden shadow-lg min-w-full min-h-screen dark:bg-gray-900">
       <div className="px-16 py-12">
-        <h2 className="font-bold text-xl mb-2">Home</h2>
+        <h2 className="font-bold text-3xl mb-2 border-solid border-b-2 border-gray-900 dark:border-gray-700">
+          Home
+        </h2>
         <p className="text-gray-700 text-base">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus
           quia, nulla! Maiores et perferendis eaque, exercitationem praesentium
