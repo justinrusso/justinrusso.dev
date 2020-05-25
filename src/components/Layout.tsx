@@ -4,18 +4,28 @@ import Head from "next/head";
 
 type Props = {
   title?: string;
+  navItems?: NavItem[];
+};
+
+type NavItem = {
+  title: string;
+  route: string;
 };
 
 export const Layout: React.FunctionComponent<Props> = ({
   children,
   title = "Justin Russo",
+  navItems = [
+    { title: "Home", route: "/" },
+    { title: "About", route: "/about" },
+  ],
 }) => (
   <>
     <Head>
       <title>{title}</title>
     </Head>
     <div className="flex flex-col h-full">
-      <header className="flex items-center justify-between flex-wrap p-6 lg:hidden bg-white dark:bg-gray-800 shadow-lg z-50">
+      <header className="flex items-center justify-between flex-wrap p-6 lg:hidden bg-white dark:bg-gray-800 shadow-lg z-40">
         <div className="flex items-center flex-shrink-0 mr-6">
           <h1 className="font-semibold text-xl tracking-tight">Justin Russo</h1>
         </div>
@@ -33,19 +43,28 @@ export const Layout: React.FunctionComponent<Props> = ({
         </div>
       </header>
       <div className="flex flex-1 min-h-0">
-        <nav className="hidden lg:block w-2/12 flex flex-row shadow-lg bg-white dark:bg-gray-900">
-          <h1 className="font-semibold text-xl tracking-tight text-center">
-            Justin Russo
-          </h1>
-          <div>
-            <Link href="/">
-              <a>Home</a>
-            </Link>{" "}
-            |{" "}
-            <Link href="/about">
-              <a>About</a>
-            </Link>{" "}
+        <nav className="hidden lg:block w-2/12 flex flex-row shadow-lg bg-white dark:bg-gray-900 z-50 text-center divide-y-2 divide-gray-200 dark:divide-gray-700">
+          <div className="py-12">
+            <h1 className="font-semibold text-2xl tracking-tight">
+              Justin Russo
+            </h1>
           </div>
+          <div>
+            <ul className="divide-y-2 divide-gray-200 dark:divide-gray-700">
+              {navItems.map((navItem: NavItem) => (
+                <>
+                  <li className="nav-item relative">
+                    <div className="py-4">
+                      <Link href={navItem.route}>
+                        <a>{navItem.title}</a>
+                      </Link>
+                    </div>
+                  </li>
+                </>
+              ))}
+            </ul>
+          </div>
+          <div>{/* TODO: Social Media links (icons) */}</div>
         </nav>
         <div className="flex-1 lg:px-10 lg:pt-10 overflow-y-scroll">
           {children}

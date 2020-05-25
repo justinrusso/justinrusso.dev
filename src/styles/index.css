@@ -18,3 +18,31 @@
     min-height: calc(theme("minHeight.screen") - 2.5rem);
   }
 }
+
+.nav-item:after {
+  @apply absolute;
+  @apply bg-gray-100;
+  @apply border-blue-500;
+  @apply h-full;
+  @apply left-0;
+  @apply top-0;
+  @apply w-0;
+
+  content: "";
+  transition: width 0.3s ease 0.1s, border 0.1s linear 0s;
+  z-index: -1;
+}
+
+@media (prefers-color-scheme: dark) {
+  .nav-item:after {
+    @apply bg-gray-800;
+  }
+}
+
+.nav-item:hover:after,
+.nav-item:active:after {
+  @apply border-r-2;
+  @apply w-full;
+
+  transition: width 0.3s ease 0s, border 0.1s linear 0.3s;
+}
