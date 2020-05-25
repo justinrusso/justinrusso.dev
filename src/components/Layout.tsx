@@ -15,7 +15,7 @@ export const Layout: React.FunctionComponent<Props> = ({
       <title>{title}</title>
     </Head>
     <div className="flex flex-col h-full">
-      <header className="flex items-center justify-between flex-wrap p-6 lg:hidden bg-white dark:bg-gray-800 shadow-lg">
+      <header className="flex items-center justify-between flex-wrap p-6 lg:hidden bg-white dark:bg-gray-800 shadow-lg z-50">
         <div className="flex items-center flex-shrink-0 mr-6">
           <h1 className="font-semibold text-xl tracking-tight">Justin Russo</h1>
         </div>
