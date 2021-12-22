@@ -10,6 +10,7 @@ import Nav from "./Nav";
 const Layout: FC = ({ children }) => {
   useEffect(() => {
     AOS.init();
+    document.body.classList.add("dark");
   }, []);
   return (
     <>
