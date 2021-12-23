@@ -1,29 +1,65 @@
 import { NextPage } from "next";
 import Link from "next/link";
+import styled from "styled-components";
+
+const Hero = styled.div`
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+`;
+
+const Paragraph = styled.p`
+  margin-bottom: 35px;
+  margin-top: 15px;
+  @media screen and (max-width: 768px) {
+    margin-bottom: 30px;
+    font-size: 18px;
+  }
+`;
+
+const Title = styled.h1`
+  font-weight: 900;
+  font-size: 125px;
+  line-height: 1;
+  letter-spacing: 5px;
+  @media screen and (max-width: 768px) {
+    font-size: 80px;
+  }
+`;
 
 const Custom404: NextPage = () => {
   return (
-    <div className="error_page">
-      <div className="hero bg-image">
-        <div className="content">
-          <h1 data-aos="fade-up" data-aos-duration="1200">
-            404!
-          </h1>
-          <p data-aos="fade-up" data-aos-duration="1200" data-aos-delay="50">
-            The page you are looking for could not be found.
-          </p>
+    <Hero>
+      <div>
+        <Title data-aos="fade-up" data-aos-duration="1200">
+          404!
+        </Title>
+        <Paragraph
+          data-aos="fade-up"
+          data-aos-duration="1200"
+          data-aos-delay="50"
+        >
+          The page you are looking for could not be found.
+        </Paragraph>
 
-          <div
-            className="edina_tm_button"
-            data-aos="fade-up"
-            data-aos-duration="1200"
-            data-aos-delay="100"
-          >
-            <Link href="/">BACK HOME</Link>
-          </div>
+        <div
+          className="edina_tm_button"
+          data-aos="fade-up"
+          data-aos-duration="1200"
+          data-aos-delay="100"
+        >
+          <Link href="/">BACK HOME</Link>
         </div>
       </div>
-    </div>
+    </Hero>
   );
 };
 
