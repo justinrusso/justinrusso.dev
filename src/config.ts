@@ -1,18 +1,27 @@
+import {
+  FiBook,
+  FiGithub,
+  FiHome,
+  FiLinkedin,
+  FiMail,
+  FiUser,
+} from "react-icons/fi";
+
 const config = {
   navLinks: [
     {
-      icon: "",
+      Icon: FiHome,
       name: "Home",
       url: "#home",
     },
-    { icon: "", name: "About", url: "#about" },
+    { Icon: FiUser, name: "About", url: "#about" },
     {
-      icon: "",
+      Icon: FiBook,
       name: "Portfolio",
       url: "#portfolio",
     },
     {
-      icon: "",
+      Icon: FiMail,
       name: "Contact",
       url: "#contact",
     },
@@ -20,12 +29,12 @@ const config = {
 
   socials: [
     {
-      icon: "",
+      Icon: FiGithub,
       name: "GitHub",
       url: "https://github.com/justinrusso",
     },
     {
-      icon: "",
+      Icon: FiLinkedin,
       name: "Linkedin",
       url: "https://www.linkedin.com/in/justin-k-russo/",
     },

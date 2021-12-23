@@ -46,10 +46,11 @@ const Nav: FC = () => {
               scrollDuration="100"
             >
               <ul className="anchor_nav">
-                {config.navLinks.map(({ icon, name, url }) => (
+                {config.navLinks.map(({ Icon, name, url }) => (
                   <li key={name}>
                     <div className="list_inner">
                       <a href={url} onClick={handleClick}>
+                        <Icon className="svg" />
                         {name}
                       </a>
                     </div>
