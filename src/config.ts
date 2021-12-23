@@ -41,10 +41,20 @@ const config = {
   ],
 
   personal: {
-    description: "I'm a full-stack software engineer.",
+    shortDescription: "I'm a full-stack software engineer.",
+    longDescription: "I'm a full-stack software engineer.",
     name: "Justin Russo",
     email: "justin@justinrusso.dev",
   },
+
+  recentSkills: [
+    "JavaScript (ES6+)",
+    "TypeScript",
+    "Python",
+    "Node.js",
+    "React",
+    "Redux",
+  ],
 };
 
 export default config;

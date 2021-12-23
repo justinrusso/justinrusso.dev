@@ -29,7 +29,7 @@ const Hero: FC = () => {
             data-aos-duration="1200"
             data-aos-delay="200"
           >
-            {config.personal.description}
+            {config.personal.shortDescription}
           </p>
 
           <div
