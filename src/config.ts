@@ -35,12 +35,13 @@ const config = {
     },
     {
       Icon: FiLinkedin,
-      name: "Linkedin",
+      name: "LinkedIn",
       url: "https://www.linkedin.com/in/justin-k-russo/",
     },
   ],
 
   personal: {
+    description: "I'm a full-stack software engineer.",
     name: "Justin Russo",
     email: "justin@justinrusso.dev",
   },
