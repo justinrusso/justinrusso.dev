@@ -60,6 +60,10 @@ const resetCss = css`
 const GlobalStyle = createGlobalStyle`
   ${resetCss}
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   :root {
     --color-bg: #fff;
     --color-text-secondary: #7e7e7e;
