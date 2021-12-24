@@ -1,9 +1,5 @@
 @charset "utf-8";
 
-body.dark {
-  background-color: #111319;
-  color: #a9afc3;
-}
 body.dark::-webkit-scrollbar {
   width: 11px;
 }
@@ -18,13 +14,6 @@ body.dark::-webkit-scrollbar-thumb {
   background-color: #bbb;
   border-radius: 6px;
   border: 3px solid #fff;
-}
-body.dark h1,
-body.dark h2,
-body.dark h3,
-body.dark h4,
-body.dark h5 {
-  color: #fff;
 }
 body.dark .edina_tm_mobile_menu .mobile_menu_inner {
   background-color: #020713;
@@ -228,12 +217,6 @@ body.dark .achievements-wrapper .box-stats {
 }
 body.dark .resume-box li:after {
   border-left: 1px solid #34495e;
-}
-
-body.dark .edina_tm_button a:hover {
-  border-color: #fff;
-  background-color: #fff;
-  color: #111319;
 }
 
 body.dark .edina_tm_modalbox .popup_informations h3 {

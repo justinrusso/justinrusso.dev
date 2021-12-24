@@ -1,6 +1,7 @@
 import { NextPage } from "next";
 import Link from "next/link";
 import styled from "styled-components";
+import Button from "../components/common/Button";
 
 const Hero = styled.div`
   width: 100%;
@@ -56,7 +57,9 @@ const Custom404: NextPage = () => {
           data-aos-duration="1200"
           data-aos-delay="100"
         >
-          <Link href="/">BACK HOME</Link>
+          <Link href="/" passHref>
+            <Button as="a">BACK HOME</Button>
+          </Link>
         </div>
       </div>
     </Hero>
