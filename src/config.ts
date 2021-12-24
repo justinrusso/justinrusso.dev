@@ -12,18 +12,18 @@ const config = {
     {
       Icon: FiHome,
       name: "Home",
-      url: "#home",
+      url: "/#home",
     },
-    { Icon: FiUser, name: "About", url: "#about" },
+    { Icon: FiUser, name: "About", url: "/#about" },
     {
       Icon: FiBook,
       name: "Portfolio",
-      url: "#portfolio",
+      url: "/#portfolio",
     },
     {
       Icon: FiMail,
       name: "Contact",
-      url: "#contact",
+      url: "/#contact",
     },
   ],
 

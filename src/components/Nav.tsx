@@ -1,6 +1,7 @@
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import { FC, useState } from "react";
+import { FC, useMemo, useState } from "react";
+import { useRouter } from "next/router";
 
 import config from "../config";
 
@@ -9,8 +10,42 @@ const ScrollspyNav = dynamic(() => import("react-scrollspy-nav"), {
 });
 
 const Nav: FC = () => {
+  const { pathname } = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
   const handleClick = () => setMenuOpen((prevState) => !prevState);
+
+  const navLinks = useMemo(
+    () =>
+      config.navLinks.map(({ Icon, name, url }) => {
+        let href = url;
+        let scrollLink = false;
+        const split = url.split("#");
+        if (split[0] === pathname) {
+          href = url.replace(pathname, "");
+          scrollLink = true;
+        }
+        return (
+          <li key={name}>
+            <div className="list_inner">
+              {scrollLink ? (
+                <a href={href} onClick={handleClick}>
+                  <Icon className="svg" />
+                  {name}
+                </a>
+              ) : (
+                <Link href={href} passHref>
+                  <a onClick={handleClick}>
+                    <Icon className="svg" />
+                    {name}
+                  </a>
+                </Link>
+              )}
+            </div>
+          </li>
+        );
+      }),
+    [pathname]
+  );
 
   return (
     <>
@@ -39,25 +74,18 @@ const Nav: FC = () => {
           </div>
 
           <div className="menu">
-            <ScrollspyNav
-              scrollTargetIds={["home", "about", "portfolio", "contact"]}
-              activeNavClass="active"
-              offset={0}
-              scrollDuration="100"
-            >
-              <ul className="anchor_nav">
-                {config.navLinks.map(({ Icon, name, url }) => (
-                  <li key={name}>
-                    <div className="list_inner">
-                      <a href={url} onClick={handleClick}>
-                        <Icon className="svg" />
-                        {name}
-                      </a>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </ScrollspyNav>
+            {pathname === "/" ? (
+              <ScrollspyNav
+                scrollTargetIds={["home", "about", "portfolio", "contact"]}
+                activeNavClass="active"
+                offset={0}
+                scrollDuration="100"
+              >
+                <ul className="anchor_nav">{navLinks}</ul>
+              </ScrollspyNav>
+            ) : (
+              <ul className="anchor_nav">{navLinks}</ul>
+            )}
           </div>
 
           <div className="author">
