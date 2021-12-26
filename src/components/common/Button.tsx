@@ -3,6 +3,7 @@ import styled from "styled-components";
 const Button = styled.button`
   text-decoration: none;
   color: var(--color-text-primary);
+  cursor: pointer;
   font-weight: 500;
   font-size: 18px;
   display: inline-block;
