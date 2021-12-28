@@ -538,86 +538,6 @@ body.dark .loader_line:after {
   }
 }
 
-.edina_tm_hero {
-  width: 100%;
-  min-height: 100vh;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-
-  .edina_tm_button {
-    margin-top: 25px;
-    a {
-      border-radius: 30px;
-
-      &:hover {
-        transform: translateY(-5px);
-      }
-    }
-  }
-}
-.edina_tm_hero .content {
-  padding: 100px 20px;
-}
-.edina_tm_hero .image {
-  display: inline-block;
-  width: 300px;
-  height: 300px;
-  border-radius: 100%;
-  position: relative;
-  margin-bottom: 27px;
-  opacity: 1;
-  visibility: visible;
-  left: 0px;
-  transition: all 1s ease;
-}
-
-.edina_tm_hero .image .main {
-  position: absolute;
-  top: 0px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  border-radius: 100%;
-}
-.edina_tm_hero .image:before {
-  content: "";
-  position: absolute;
-  top: -10px;
-  bottom: -10px;
-  left: -10px;
-  right: -10px;
-  background-color: #e2e2e2;
-  border-radius: 100%;
-}
-.edina_tm_hero .name {
-  font-size: 55px;
-  font-weight: 700;
-  margin-bottom: 14px;
-  line-height: 1.2;
-}
-.edina_tm_hero .extra {
-  position: relative;
-  opacity: 1;
-  visibility: visible;
-  left: 0px;
-  transition-delay: 0.8s;
-  transition: all 1s ease;
-}
-
-.edina_tm_hero .text {
-  max-width: 500px;
-  margin: 0px auto 32px auto;
-  @media screen and (max-width: 575px) {
-    font-size: 15px;
-  }
-}
-
 /*---------------------------------------------------*/
 /*	05) EDINA ABOUT
 /*---------------------------------------------------*/
@@ -2319,10 +2239,6 @@ a {
   .container {
     max-width: 1170px;
   }
-  .edina_tm_hero .image {
-    width: 250px;
-    height: 250px;
-  }
 
   .edina_tm_about .rightpart {
     padding-left: 120px;
@@ -2490,13 +2406,6 @@ a {
   .edina_tm_about .experience .info span {
     font-size: 13px;
   }
-  .edina_tm_hero .name {
-    font-size: 36px;
-  }
-  .edina_tm_hero .image {
-    width: 200px;
-    height: 200px;
-  }
   .edina_tm_about .about_title h3 {
     font-size: 35px;
   }
@@ -2611,9 +2520,6 @@ a {
   }
   .edina_tm_testimonials .list .details {
     margin-bottom: 25px;
-  }
-  .edina_tm_hero .name {
-    font-size: 35px;
   }
 }
 
@@ -2759,31 +2665,6 @@ a {
       width: 20px;
       height: 20px;
     }
-  }
-}
-.img-shape {
-  width: 300px;
-  height: 300px;
-  margin: 0 auto 15px;
-  @media screen and (max-width: 1599px) {
-    width: 245px;
-    height: 245px;
-  }
-  @media screen and (max-width: 768px) {
-    width: 200px;
-    height: 200px;
-  }
-  img {
-    -webkit-mask-position: center center;
-    mask-position: center center;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    height: auto;
-    width: 100%;
-    max-width: 100%;
-    -webkit-mask-size: auto auto;
-    -webkit-mask-image: url(/images/hero-shape.svg);
-    mask-image: url(/images/hero-shape.svg);
   }
 }
 .invalid-feedback,

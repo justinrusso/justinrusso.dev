@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { HeroRoot } from "../home/Hero";
 
 const Button = styled.button`
   text-decoration: none;
@@ -20,6 +21,14 @@ const Button = styled.button`
     color: var(--color-bg);
     background-color: var(--color-text-primary);
     border-color: var(--color-text-primary);
+  }
+
+  ${HeroRoot} & {
+    border-radius: 30px;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
   }
 `;
 
