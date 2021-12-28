@@ -617,58 +617,6 @@ body.dark .loader_line:after {
     font-size: 15px;
   }
 }
-.edina_tm_hero .social ul {
-  margin: 0px;
-  list-style-type: none;
-  list-style: none;
-}
-.edina_tm_hero .social ul li {
-  margin: 0px;
-  display: inline-block;
-}
-.edina_tm_hero .social ul li a {
-  text-decoration: none;
-  color: #e7e7e7;
-  display: inline-block;
-  position: relative;
-  line-height: 1;
-  padding: 0px 15px;
-  &:hover {
-    transform: translateY(-3px);
-    svg {
-      color: #333;
-      transition: all 0.3s ease;
-    }
-  }
-  svg {
-    fill: transparent;
-    color: #888;
-    width: 22px;
-    height: 22px;
-  }
-}
-.edina_tm_hero .social ul li a:after {
-  position: absolute;
-  content: "";
-  width: 1px;
-  height: 100%;
-  background-color: #e5e5e5;
-  top: 0px;
-  right: 0px;
-}
-.edina_tm_hero .social ul li:last-child a:after {
-  display: none;
-}
-.edina_tm_hero .social ul li .svg {
-  width: 19px;
-  height: 19px;
-
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
 
 /*---------------------------------------------------*/
 /*	05) EDINA ABOUT
