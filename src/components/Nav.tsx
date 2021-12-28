@@ -1,13 +1,81 @@
 import Link from "next/link";
 import dynamic from "next/dynamic";
+import styled from "styled-components";
 import { FC, useMemo, useState } from "react";
 import { useRouter } from "next/router";
 
+import Button from "./common/Button";
 import config from "../config";
 
 const ScrollspyNav = dynamic(() => import("react-scrollspy-nav"), {
   ssr: false,
 });
+
+const Sidebar = styled.div`
+  width: 320px;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  left: 0;
+  z-index: 99;
+  transition: all 0.5s ease;
+  border-right: 1px solid var(--color-divider);
+  @media screen and (min-width: 1200px) and (max-width: 1500px) {
+    width: 288px;
+  }
+  @media screen and (max-width: 1199px) {
+    transform: translateX(-100%);
+    &.menu-open {
+      transform: translateX(0);
+    }
+  }
+  @media screen and (max-width: 991px) {
+    width: 280px;
+  }
+  @media screen and (max-width: 359px) {
+    width: 240px;
+  }
+`;
+
+const NavButton = styled(Button)`
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  border-radius: var(--border-radius);
+  padding: 9px 15px;
+  position: relative;
+  border: none;
+
+  @media screen and (max-width: 1199px) {
+    font-size: 14px;
+    padding: 5px 15px;
+  }
+
+  /* Reset the hover props from Button */
+  &:hover {
+    color: var(--color-text-primary);
+    background-color: inherit;
+    border-color: inherit;
+  }
+
+  &:before {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: var(--color-bg-hover);
+    border-radius: var(--border-radius);
+    z-index: -1;
+    transition: all 0.3s ease;
+  }
+
+  &:hover:before,
+  &.active:before {
+    width: 100%;
+  }
+`;
 
 const Nav: FC = () => {
   const { pathname } = useRouter();
@@ -28,16 +96,16 @@ const Nav: FC = () => {
           <li key={name}>
             <div className="list_inner">
               {scrollLink ? (
-                <a href={href} onClick={handleClick}>
+                <NavButton as="a" href={href} onClick={handleClick}>
                   <Icon className="svg" />
                   {name}
-                </a>
+                </NavButton>
               ) : (
                 <Link href={href} passHref>
-                  <a onClick={handleClick}>
+                  <NavButton as="a" onClick={handleClick}>
                     <Icon className="svg" />
                     {name}
-                  </a>
+                  </NavButton>
                 </Link>
               )}
             </div>
@@ -58,7 +126,7 @@ const Nav: FC = () => {
           </div>
         </button>
       </div>
-      <div
+      <Sidebar
         className={menuOpen ? "edina_tm_sidebar menu-open" : "edina_tm_sidebar"}
       >
         <div className="sidebar_inner">
@@ -112,7 +180,7 @@ const Nav: FC = () => {
             </div>
           </div>
         </div>
-      </div>
+      </Sidebar>
     </>
   );
 };

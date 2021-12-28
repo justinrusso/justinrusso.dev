@@ -60,13 +60,19 @@ const GlobalStyle = createGlobalStyle`
   }
 
   :root {
+    --border-radius: 6px;
+
     --color-bg: #fff;
+    --color-bg-hover: rgba(0, 0, 0, 0.05);
+    --color-divider: rgba(0, 0, 0, 0.12);
     --color-text-secondary: #7e7e7e;
     --color-text-primary: #1a1a1a;
   }
 
   :root.dark {
     --color-bg: #111319;
+    --color-bg-hover: rgba(255, 255, 255, 0.05);
+    --color-divider: rgba(255, 255, 255, 0.12);
     --color-text-secondary: #a9afc3;
     --color-text-primary: #fff;
   }
