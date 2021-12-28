@@ -543,7 +543,6 @@ body.dark .loader_line:after {
   min-height: 100vh;
   position: relative;
   display: flex;
-  background-color: #f5f8fc;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -1146,7 +1145,6 @@ body.dark .loader_line:after {
   height: auto;
   clear: both;
   float: left;
-  background-color: #f5f8fc;
   padding: 120px 0px 90px 0px;
   @media screen and (max-width: 991px) {
     padding: 90px 0px 60px 0px;
@@ -1667,7 +1665,6 @@ body.dark .loader_line:after {
   height: auto;
   clear: both;
   float: left;
-  background-color: #f5f8fc;
   padding: 120px 0px 140px 0px;
   @media screen and (max-width: 991px) {
     padding: 90px 0px 110px 0px;
@@ -1969,7 +1966,6 @@ body.modal {
   height: auto;
   clear: both;
   float: left;
-  background-color: #f5f8fc;
   padding: 120px 0px;
   @media screen and (max-width: 991px) {
     padding: 90px 0px;
