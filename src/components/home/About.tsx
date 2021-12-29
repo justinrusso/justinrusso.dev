@@ -62,21 +62,6 @@ const AboutRoot = styled.section`
     .desc {
       max-width: 90%;
     }
-
-    .dodo_progress {
-      width: 100%;
-      display: grid;
-      padding-top: 40px;
-      flex-wrap: wrap;
-      grid-template-columns: 1fr 1fr;
-      column-gap: 20px;
-      color: var(--color-text-secondary);
-
-      @media screen and (max-width: 575px) {
-        margin: 0;
-        grid-template-columns: 1fr;
-      }
-    }
   }
 `;
 
@@ -102,9 +87,7 @@ const About: FC = () => {
                 Here are a few technologies I&apos;ve been working with
                 recently:
               </p>
-              <div className="dodo_progress">
-                <Skills />
-              </div>
+              <Skills />
             </div>
           </div>
         </div>

@@ -542,65 +542,6 @@ body.dark .loader_line:after {
 /*	05) EDINA ABOUT
 /*---------------------------------------------------*/
 
-.progress_inner {
-  width: 100%;
-  margin-bottom: 31px;
-}
-.progress_inner .label {
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 10px;
-  display: inline-block;
-}
-.progress_inner .background {
-  width: 100%;
-  min-width: 100%;
-  position: relative;
-  height: 16px;
-  border: 1px solid #7e7e7e;
-  padding: 2px;
-}
-.progress_inner .background .bar_in {
-  height: 100%;
-  background: #34495e;
-
-  overflow: hidden;
-}
-.progress_inner .background .bar {
-  height: 100%;
-}
-.progress_inner .background .bar.open {
-  -webkit-animation: wow 2s cubic-bezier(0.165, 0.84, 0.44, 1); /* Safari 4+ */
-  -moz-animation: wow 2s cubic-bezier(0.165, 0.84, 0.44, 1); /* Fx 5+ */
-  animation: wow 2s cubic-bezier(0.165, 0.84, 0.44, 1); /* IE 10+ */
-  width: 100%;
-}
-
-@-webkit-keyframes wow {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 100%;
-  }
-}
-@-moz-keyframes wow {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 100%;
-  }
-}
-@keyframes wow {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 100%;
-  }
-}
-
 .edina_tm_about .rightpart .image {
   position: relative;
 }
