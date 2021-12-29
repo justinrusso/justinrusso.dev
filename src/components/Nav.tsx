@@ -20,6 +20,8 @@ const Sidebar = styled.div`
   z-index: 99;
   transition: all 0.5s ease;
   border-right: 1px solid var(--color-divider);
+  background-color: var(--color-bg);
+
   @media screen and (min-width: 1200px) and (max-width: 1500px) {
     width: 288px;
   }
@@ -34,6 +36,19 @@ const Sidebar = styled.div`
   }
   @media screen and (max-width: 359px) {
     width: 240px;
+  }
+`;
+
+const ModalBackground = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+
+  @media screen and (min-width: 1200px) {
+    display: none;
   }
 `;
 
@@ -181,6 +196,7 @@ const Nav: FC = () => {
           </div>
         </div>
       </Sidebar>
+      {menuOpen && <ModalBackground />}
     </>
   );
 };
