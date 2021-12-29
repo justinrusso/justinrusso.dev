@@ -18,7 +18,7 @@ const Layout: FC = ({ children }) => {
       <Head />
       <GlobalStyle />
       <Nav />
-      <main>{children}</main>
+      <main className="edina_tm_mainpart">{children}</main>
       <Footer />
     </>
   );
