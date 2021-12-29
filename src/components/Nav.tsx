@@ -11,6 +11,66 @@ const ScrollspyNav = dynamic(() => import("react-scrollspy-nav"), {
   ssr: false,
 });
 
+export const MobileButtonWrapper = styled.div`
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 11;
+  display: none;
+  @media screen and (max-width: 1199px) {
+    display: block;
+  }
+
+  ${Button} {
+    width: 55px;
+    height: 55px;
+    position: relative;
+    border-radius: 50%;
+    padding: 0;
+    border: none;
+    background-color: var(--color-text-primary);
+  }
+`;
+
+const MenuIcon = styled.div`
+  span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 25px;
+    height: 2px;
+    margin: auto;
+    background: var(--color-bg);
+    color: var(--color-bg);
+    transition: 0.3s;
+  }
+
+  & span:nth-child(1) {
+    top: -17px;
+  }
+  & span:nth-child(2) {
+    top: -1px;
+  }
+  & span:nth-child(3) {
+    top: auto;
+    bottom: 19px;
+  }
+  &.active span:nth-child(1) {
+    top: 0px;
+    transform: rotate(45deg);
+  }
+  &.active span:nth-child(2) {
+    left: 50%;
+    width: 0px;
+  }
+  &.active span:nth-child(3) {
+    top: 19px;
+    transform: rotate(-45deg);
+  }
+`;
+
 const Sidebar = styled.div`
   width: 320px;
   height: 100vh;
@@ -132,15 +192,15 @@ const Nav: FC = () => {
 
   return (
     <>
-      <div className="mob-header">
-        <button className="toggler-menu" onClick={handleClick}>
-          <div className={menuOpen ? "active" : ""}>
+      <MobileButtonWrapper>
+        <Button onClick={handleClick}>
+          <MenuIcon className={menuOpen ? "active" : ""}>
             <span></span>
             <span></span>
             <span></span>
-          </div>
-        </button>
-      </div>
+          </MenuIcon>
+        </Button>
+      </MobileButtonWrapper>
       <Sidebar
         className={menuOpen ? "edina_tm_sidebar menu-open" : "edina_tm_sidebar"}
       >

@@ -2592,68 +2592,6 @@ a {
   left: 17px;
   z-index: 2;
 }
-// mobile menu
-.mob-header {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  z-index: 11;
-  display: none;
-  @media screen and (max-width: 1199px) {
-    display: block;
-  }
-}
-
-.toggler-menu {
-  width: 55px;
-  height: 55px;
-  position: relative;
-  border-radius: 50%;
-  padding: 0;
-  background: #000;
-  border: none;
-  cursor: pointer;
-  margin-left: auto;
-  span {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    width: 25px;
-    height: 2px;
-    margin: auto;
-    background: #fff;
-    color: #fff;
-    transition: 0.3s;
-  }
-}
-
-.toggler-menu span {
-  transition: 0.3s;
-}
-.toggler-menu span:nth-child(1) {
-  top: -17px;
-}
-.toggler-menu span:nth-child(2) {
-  top: -1px;
-}
-.toggler-menu span:nth-child(3) {
-  top: auto;
-  bottom: 19px;
-}
-.toggler-menu .active span:nth-child(1) {
-  top: 0px;
-  transform: rotate(45deg);
-}
-.toggler-menu .active span:nth-child(2) {
-  left: 50%;
-  width: 0px;
-}
-.toggler-menu .active span:nth-child(3) {
-  top: 19px;
-  transform: rotate(-45deg);
-}
 
 .preview-sticker {
   width: 65px;
