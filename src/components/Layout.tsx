@@ -11,7 +11,6 @@ import GlobalStyle from "../theme/GlobalStyle";
 const Layout: FC = ({ children }) => {
   useEffect(() => {
     AOS.init();
-    document.documentElement.classList.add("dark");
   }, []);
   return (
     <>
