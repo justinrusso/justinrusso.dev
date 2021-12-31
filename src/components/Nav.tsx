@@ -1,11 +1,13 @@
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import styled from "styled-components";
-import { FC, useMemo, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 import Button from "./common/Button";
 import config from "../config";
+import { transitionDurations, transitionNames } from "../theme/transitions";
 
 const ScrollspyNav = dynamic(() => import("react-scrollspy-nav"), {
   ssr: false,
@@ -154,40 +156,70 @@ const NavButton = styled(Button)`
 
 const Nav: FC = () => {
   const { pathname } = useRouter();
+  const [isMounted, setIsMounted] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const handleClick = () => setMenuOpen((prevState) => !prevState);
 
-  const navLinks = useMemo(
-    () =>
-      config.navLinks.map(({ Icon, name, url }) => {
-        let href = url;
-        let scrollLink = false;
-        const split = url.split("#");
-        if (split[0] === pathname) {
-          href = url.replace(pathname, "");
-          scrollLink = true;
-        }
-        return (
-          <li key={name}>
-            <div className="list_inner">
-              {scrollLink ? (
-                <NavButton as="a" href={href} onClick={handleClick}>
-                  <Icon className="svg" />
-                  {name}
-                </NavButton>
-              ) : (
-                <Link href={href} passHref>
-                  <NavButton as="a" onClick={handleClick}>
-                    <Icon className="svg" />
-                    {name}
-                  </NavButton>
-                </Link>
-              )}
-            </div>
-          </li>
-        );
-      }),
-    [pathname]
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setIsMounted(true);
+    }, 100);
+
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, []);
+
+  const NavLinks = (
+    <TransitionGroup className="anchor_nav" component="ul">
+      {isMounted ? (
+        config.navLinks.map(({ Icon, name, url }, i) => {
+          let href = url;
+          let scrollLink = false;
+          const split = url.split("#");
+          if (split[0] === pathname) {
+            href = url.replace(pathname, "");
+            scrollLink = true;
+          }
+
+          const delay = 100 * (i + 1);
+
+          return (
+            <CSSTransition
+              key={name}
+              classNames={transitionNames.fadeRight}
+              timeout={transitionDurations.fade + delay}
+            >
+              <li
+                key={name}
+                className={transitionNames.fadeRight}
+                style={{
+                  transitionDelay: `${delay}ms`,
+                }}
+              >
+                <div className="list_inner">
+                  {scrollLink ? (
+                    <NavButton as="a" href={href} onClick={handleClick}>
+                      <Icon className="svg" />
+                      {name}
+                    </NavButton>
+                  ) : (
+                    <Link href={href} passHref>
+                      <NavButton as="a" onClick={handleClick}>
+                        <Icon className="svg" />
+                        {name}
+                      </NavButton>
+                    </Link>
+                  )}
+                </div>
+              </li>
+            </CSSTransition>
+          );
+        })
+      ) : (
+        <></>
+      )}
+    </TransitionGroup>
   );
 
   return (
@@ -205,16 +237,25 @@ const Nav: FC = () => {
         className={menuOpen ? "edina_tm_sidebar menu-open" : "edina_tm_sidebar"}
       >
         <div className="sidebar_inner">
-          <div className="logo">
-            <Link href="/">
-              {/* <img
-                className="logo_light"
-                src={`img/logo/${logo2}.png`}
-                alt="brand"
-              /> */}
-              Logo
-            </Link>
-          </div>
+          <TransitionGroup component={null}>
+            {isMounted && (
+              <CSSTransition
+                classNames="fade"
+                timeout={transitionDurations.fade}
+              >
+                <div className="logo fade">
+                  <Link href="/">
+                    {/* <img
+                      className="logo_light"
+                      src={`img/logo/${logo2}.png`}
+                      alt="brand"
+                    /> */}
+                    Logo
+                  </Link>
+                </div>
+              </CSSTransition>
+            )}
+          </TransitionGroup>
 
           <div className="menu">
             {pathname === "/" ? (
@@ -224,36 +265,48 @@ const Nav: FC = () => {
                 offset={0}
                 scrollDuration="100"
               >
-                <ul className="anchor_nav">{navLinks}</ul>
+                {NavLinks}
               </ScrollspyNav>
             ) : (
-              <ul className="anchor_nav">{navLinks}</ul>
+              NavLinks
             )}
           </div>
 
-          <div className="author">
-            <div className="inner">
-              <div className="image">
-                <div
-                  className="main"
-                  style={
-                    {
-                      // backgroundImage: `url(sidebarFooterContent.avatar})`,
-                    }
-                  }
-                ></div>
-              </div>
-              <div className="short">
-                <h3>{config.personal.name}</h3>
-                <a
-                  style={{ direction: "rtl", unicodeBidi: "bidi-override" }}
-                  href={`mailto:${config.personal.email}`}
-                >
-                  {config.personal.email.split("").reverse().join("")}
-                </a>
-              </div>
-            </div>
-          </div>
+          <TransitionGroup component={null}>
+            {isMounted && (
+              <CSSTransition
+                classNames={transitionNames.fade}
+                timeout={transitionDurations.fade}
+              >
+                <div className={`author ${transitionNames.fade}`}>
+                  <div className="inner">
+                    <div className="image">
+                      <div
+                        className="main"
+                        style={
+                          {
+                            // backgroundImage: `url(sidebarFooterContent.avatar})`,
+                          }
+                        }
+                      ></div>
+                    </div>
+                    <div className="short">
+                      <h3>{config.personal.name}</h3>
+                      <a
+                        style={{
+                          direction: "rtl",
+                          unicodeBidi: "bidi-override",
+                        }}
+                        href={`mailto:${config.personal.email}`}
+                      >
+                        {config.personal.email.split("").reverse().join("")}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </CSSTransition>
+            )}
+          </TransitionGroup>
         </div>
       </Sidebar>
       {menuOpen && <ModalBackground />}

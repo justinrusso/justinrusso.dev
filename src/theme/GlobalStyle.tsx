@@ -1,5 +1,7 @@
 import { createGlobalStyle, css } from "styled-components";
 
+import transitions from "./transitions";
+
 /*
   Josh's Custom CSS Reset
   https://www.joshwcomeau.com/css/custom-css-reset/
@@ -92,6 +94,8 @@ const GlobalStyle = createGlobalStyle`
   h6 {
     color: var(--color-text-primary);
   }
+
+  ${transitions}
 `;
 
 export default GlobalStyle;
