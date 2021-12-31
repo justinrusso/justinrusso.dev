@@ -99,6 +99,110 @@ const Sidebar = styled.div`
   @media screen and (max-width: 359px) {
     width: 240px;
   }
+
+  .sidebar_inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px;
+    @media screen and (max-width: 1199px) {
+      padding: 20px;
+    }
+  }
+
+  .logo {
+    width: 100%;
+
+    img {
+      max-width: 120px;
+      @media screen and (max-width: 1199px) {
+        max-width: 70px;
+      }
+    }
+  }
+
+  .menu {
+    width: 100%;
+    padding: 60px 0;
+    @media screen and (max-width: 1199px) {
+      padding: 35px 0;
+    }
+
+    ul {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      li {
+        width: 100%;
+
+        .svg {
+          width: 22px;
+          height: 22px;
+          margin-right: 15px;
+          filter: invert(0.3);
+          transition: all 0.3s ease;
+          @media screen and (max-width: 1199px) {
+            width: 18px;
+            height: 18px;
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .author {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+
+    .image {
+      position: relative;
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+      display: inline-block;
+    }
+
+    .main {
+      position: absolute;
+      top: 0px;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      border-radius: 100%;
+    }
+
+    .short {
+      padding-left: 13px;
+
+      h3 {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1;
+      }
+
+      a {
+        text-decoration: none;
+        color: #7e7e7e;
+        font-size: 14px;
+
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+      }
+    }
+  }
 `;
 
 const ModalBackground = styled.div`
@@ -237,49 +341,51 @@ const Nav: FC = () => {
         className={menuOpen ? "edina_tm_sidebar menu-open" : "edina_tm_sidebar"}
       >
         <div className="sidebar_inner">
-          <TransitionGroup component={null}>
-            {isMounted && (
-              <CSSTransition
-                classNames="fade"
-                timeout={transitionDurations.fade}
-              >
-                <div className="logo fade">
-                  <Link href="/">
-                    {/* <img
+          <div>
+            <TransitionGroup component={null}>
+              {isMounted && (
+                <CSSTransition
+                  classNames="fade"
+                  timeout={transitionDurations.fade}
+                >
+                  <div className="logo fade">
+                    <Link href="/">
+                      {/* <img
                       className="logo_light"
                       src={`img/logo/${logo2}.png`}
                       alt="brand"
                     /> */}
-                    Logo
-                  </Link>
-                </div>
-              </CSSTransition>
-            )}
-          </TransitionGroup>
+                      Logo
+                    </Link>
+                  </div>
+                </CSSTransition>
+              )}
+            </TransitionGroup>
 
-          <div className="menu">
-            {pathname === "/" ? (
-              <ScrollspyNav
-                scrollTargetIds={["about", "portfolio", "contact"]}
-                activeNavClass="active"
-                offset={0}
-                scrollDuration="100"
-              >
-                {NavLinks}
-              </ScrollspyNav>
-            ) : (
-              NavLinks
-            )}
+            <div className="menu">
+              {pathname === "/" ? (
+                <ScrollspyNav
+                  scrollTargetIds={["about", "portfolio", "contact"]}
+                  activeNavClass="active"
+                  offset={0}
+                  scrollDuration="100"
+                >
+                  {NavLinks}
+                </ScrollspyNav>
+              ) : (
+                NavLinks
+              )}
+            </div>
           </div>
 
-          <TransitionGroup component={null}>
-            {isMounted && (
-              <CSSTransition
-                classNames={transitionNames.fade}
-                timeout={transitionDurations.fade}
-              >
-                <div className={`author ${transitionNames.fade}`}>
-                  <div className="inner">
+          <div>
+            <TransitionGroup component={null}>
+              {isMounted && (
+                <CSSTransition
+                  classNames={transitionNames.fade}
+                  timeout={transitionDurations.fade}
+                >
+                  <div className={`author ${transitionNames.fade}`}>
                     <div className="image">
                       <div
                         className="main"
@@ -303,10 +409,10 @@ const Nav: FC = () => {
                       </a>
                     </div>
                   </div>
-                </div>
-              </CSSTransition>
-            )}
-          </TransitionGroup>
+                </CSSTransition>
+              )}
+            </TransitionGroup>
+          </div>
         </div>
       </Sidebar>
       {menuOpen && <ModalBackground />}
