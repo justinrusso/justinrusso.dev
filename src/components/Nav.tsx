@@ -8,6 +8,7 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 import Button from "./common/Button";
 import config from "../config";
 import { transitionDurations, transitionNames } from "../theme/transitions";
+import Image from "next/image";
 
 const ScrollspyNav = dynamic(() => import("react-scrollspy-nav"), {
   ssr: false,
@@ -161,24 +162,15 @@ const Sidebar = styled.div`
     display: flex;
     align-items: center;
 
-    .image {
-      position: relative;
+    .profile-picture-wrapper {
       width: 50px;
       height: 50px;
-      border-radius: 100%;
       display: inline-block;
-    }
+      position: relative;
 
-    .main {
-      position: absolute;
-      top: 0px;
-      bottom: 0px;
-      left: 0px;
-      right: 0px;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-      border-radius: 100%;
+      .profile-picture {
+        border-radius: 100%;
+      }
     }
 
     .short {
@@ -386,15 +378,13 @@ const Nav: FC = () => {
                   timeout={transitionDurations.fade}
                 >
                   <div className={`author ${transitionNames.fade}`}>
-                    <div className="image">
-                      <div
-                        className="main"
-                        style={
-                          {
-                            // backgroundImage: `url(sidebarFooterContent.avatar})`,
-                          }
-                        }
-                      ></div>
+                    <div className="profile-picture-wrapper">
+                      <Image
+                        src="/images/profile-portrait.jpg"
+                        alt="hero image"
+                        className="profile-picture"
+                        layout="fill"
+                      />
                     </div>
                     <div className="short">
                       <h3>{config.personal.name}</h3>
