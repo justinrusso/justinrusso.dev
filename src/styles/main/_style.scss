@@ -439,25 +439,6 @@ body.dark .loader_line:after {
 /*	05) EDINA ABOUT
 /*---------------------------------------------------*/
 
-.edina_tm_about .rightpart .image {
-  position: relative;
-}
-.edina_tm_about .rightpart .image img {
-  position: relative;
-  min-width: 100%;
-  opacity: 0;
-}
-.edina_tm_about .rightpart .image .main {
-  position: absolute;
-  top: 0px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  border-radius: 10px;
-}
 .edina_tm_about .experience {
   position: absolute;
   bottom: -50px;

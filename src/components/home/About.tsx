@@ -2,6 +2,7 @@ import { FC, useState } from "react";
 import Skills from "./Skills";
 import config from "../../config";
 import styled from "styled-components";
+import Image from "next/image";
 
 const AboutRoot = styled.section`
   width: 100%;
@@ -24,9 +25,8 @@ const AboutRoot = styled.section`
     display: grid;
     padding-top: 60px;
 
-    grid-template-columns: 1fr 1fr;
-    column-gap: 200px;
-    row-gap: 60px;
+    grid-template-columns: 3fr 2fr;
+    gap: 50px;
 
     @media screen and (max-width: 1040px) {
       grid-template-columns: 1fr;
@@ -63,6 +63,24 @@ const AboutRoot = styled.section`
       max-width: 90%;
     }
   }
+
+  .portrait-side {
+    display: flex;
+
+    @media screen and (max-width: 1040px) {
+      justify-content: center;
+    }
+  }
+
+  .portrait-wrapper {
+    max-width: 300px;
+    width: 100%;
+  }
+
+  .one-to-one {
+    position: relative;
+    padding-top: 100%;
+  }
 `;
 
 const About: FC = () => {
@@ -75,6 +93,7 @@ const About: FC = () => {
             data-aos="fade-right"
             data-aos-duration="1200"
             data-aos-delay="100"
+            data-aos-once="true"
           >
             <div className="info">
               <h3>
@@ -88,6 +107,24 @@ const About: FC = () => {
                 recently:
               </p>
               <Skills />
+            </div>
+          </div>
+          <div
+            className="portrait-side"
+            data-aos="fade-left"
+            data-aos-duration="1200"
+            data-aos-delay="200"
+            data-aos-once="true"
+          >
+            <div className="portrait-wrapper">
+              <div className="one-to-one">
+                <Image
+                  src="/images/profile-portrait.jpg"
+                  alt="hero image"
+                  className="profile-picture"
+                  layout="fill"
+                />
+              </div>
             </div>
           </div>
         </div>

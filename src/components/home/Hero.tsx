@@ -18,35 +18,6 @@ export const HeroRoot = styled.section`
     padding: 100px 20px;
   }
 
-  .profile-picture-wrapper {
-    width: 300px;
-    height: 300px;
-    margin: 0 auto 15px;
-    @media screen and (max-width: 1599px) {
-      width: 245px;
-      height: 245px;
-    }
-    @media screen and (max-width: 768px) {
-      width: 200px;
-      height: 200px;
-    }
-  }
-
-  .profile-picture {
-    border-radius: 100%;
-    display: inline-block;
-    height: auto;
-    mask-image: url(/images/hero-shape.svg);
-    mask-position: center center;
-    mask-repeat: no-repeat;
-    mask-size: auto auto;
-    max-width: 100%;
-    opacity: 1;
-    transition: all 1s ease;
-    visibility: visible;
-    width: 100%;
-  }
-
   .name {
     font-size: 55px;
     font-weight: 700;
@@ -88,18 +59,6 @@ const Hero: FC = () => {
   return (
     <HeroRoot className="edina_tm_hero" id="home">
       <div className="content">
-        <div
-          className="profile-picture-wrapper"
-          data-aos="fade-up"
-          data-aos-duration="1200"
-        >
-          <Image
-            src="/images/profile-portrait.jpg"
-            alt="hero image"
-            className="profile-picture"
-            layout="fill"
-          />
-        </div>
         <div className="extra">
           <h1
             className="name"
