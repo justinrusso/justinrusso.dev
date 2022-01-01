@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { CSSProperties, FC } from "react";
 import styled from "styled-components";
 import config from "../config";
 
@@ -38,9 +38,14 @@ const IconButton = styled.a`
   }
 `;
 
-const Social: FC = () => {
+interface SocialProps {
+  className?: string;
+  style?: CSSProperties;
+}
+
+const Social: FC<SocialProps> = ({ className, style }) => {
   return (
-    <SocialRoot>
+    <SocialRoot className={className} style={style}>
       {config.socials.map(({ Icon, name, url }) => (
         <SocialListItem key={name}>
           <IconButton href={url} target="_blank" rel="noreferrer" title={name}>

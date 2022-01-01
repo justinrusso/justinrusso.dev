@@ -8,6 +8,7 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 import Button from "./common/Button";
 import config from "../config";
 import { transitionDurations, transitionNames } from "../theme/transitions";
+import Social from "./Social";
 import Image from "next/image";
 
 const ScrollspyNav = dynamic(() => import("react-scrollspy-nav"), {
@@ -156,6 +157,13 @@ const Sidebar = styled.div`
     }
   }
 
+  .bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
   .author {
     width: 100%;
     height: auto;
@@ -250,6 +258,10 @@ const NavButton = styled(Button)`
   }
 `;
 
+const ResumeButtonWrapper = styled.div`
+  padding-top: 20px;
+`;
+
 const Nav: FC = () => {
   const { pathname } = useRouter();
   const [isMounted, setIsMounted] = useState(false);
@@ -265,6 +277,8 @@ const Nav: FC = () => {
       clearTimeout(timeout);
     };
   }, []);
+
+  const transitionTimeout = 0;
 
   const NavLinks = (
     <TransitionGroup className="anchor_nav" component="ul">
@@ -284,7 +298,7 @@ const Nav: FC = () => {
             <CSSTransition
               key={name}
               classNames={transitionNames.fadeRight}
-              timeout={transitionDurations.fade + delay}
+              timeout={transitionTimeout}
             >
               <li
                 key={name}
@@ -336,10 +350,7 @@ const Nav: FC = () => {
           <div>
             <TransitionGroup component={null}>
               {isMounted && (
-                <CSSTransition
-                  classNames="fade"
-                  timeout={transitionDurations.fade}
-                >
+                <CSSTransition classNames="fade" timeout={transitionTimeout}>
                   <div className="logo fade">
                     <Link href="/">
                       {/* <img
@@ -367,15 +378,40 @@ const Nav: FC = () => {
               ) : (
                 NavLinks
               )}
+              <TransitionGroup component={null}>
+                {isMounted && (
+                  <CSSTransition
+                    classNames={transitionNames.fadeRight}
+                    timeout={transitionTimeout}
+                  >
+                    <ResumeButtonWrapper
+                      className={transitionNames.fadeRight}
+                      style={{
+                        transitionDelay: `${400}ms`,
+                      }}
+                    >
+                      <Button
+                        as="a"
+                        href="img/cv.png"
+                        download
+                        className="color"
+                      >
+                        Resume
+                      </Button>
+                    </ResumeButtonWrapper>
+                  </CSSTransition>
+                )}
+              </TransitionGroup>
             </div>
           </div>
 
-          <div>
+          <div className="bottom">
             <TransitionGroup component={null}>
-              {isMounted && (
+              {isMounted && [
                 <CSSTransition
+                  key="author"
                   classNames={transitionNames.fade}
-                  timeout={transitionDurations.fade}
+                  timeout={transitionTimeout}
                 >
                   <div className={`author ${transitionNames.fade}`}>
                     <div className="profile-picture-wrapper">
@@ -399,8 +435,15 @@ const Nav: FC = () => {
                       </a>
                     </div>
                   </div>
-                </CSSTransition>
-              )}
+                </CSSTransition>,
+                <CSSTransition
+                  key="social"
+                  classNames={transitionNames.fade}
+                  timeout={transitionTimeout}
+                >
+                  <Social className={transitionNames.fade} />
+                </CSSTransition>,
+              ]}
             </TransitionGroup>
           </div>
         </div>
