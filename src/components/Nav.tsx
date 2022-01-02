@@ -192,7 +192,7 @@ const Sidebar = styled.div`
 
       a {
         text-decoration: none;
-        color: #7e7e7e;
+        color: var(--color-text-secondary);
         font-size: 14px;
 
         -webkit-transition: all 0.3s ease;
