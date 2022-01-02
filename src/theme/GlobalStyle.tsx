@@ -68,8 +68,8 @@ const GlobalStyle = createGlobalStyle`
     --color-bg-hover: rgba(0, 0, 0, 0.05);
     --color-divider: rgba(0, 0, 0, 0.12);
     --color-scrollbar: rgba(0, 0, 0, 0.25);
-    --color-text-secondary: #7e7e7e;
-    --color-text-primary: #1a1a1a;
+    --color-text-primary: rgba(0, 0, 0, 0.87);
+    --color-text-secondary: rgba(0, 0, 0, 0.6);
   }
 
   :root.dark {
@@ -77,8 +77,8 @@ const GlobalStyle = createGlobalStyle`
     --color-bg-hover: rgba(255, 255, 255, 0.05);
     --color-divider: rgba(255, 255, 255, 0.12);
     --color-scrollbar: rgba(255, 255, 255, 0.25);
-    --color-text-secondary: #a9afc3;
     --color-text-primary: #fff;
+    --color-text-secondary: rgba(255, 255, 255, 0.7);
   }
 
   body {
