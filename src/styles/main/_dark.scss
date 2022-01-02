@@ -1,20 +1,5 @@
 @charset "utf-8";
 
-body.dark::-webkit-scrollbar {
-  width: 11px;
-}
-body.dark {
-  scrollbar-width: thin;
-  scrollbar-color: #bbb #fff;
-}
-body.dark::-webkit-scrollbar-track {
-  background: #fff;
-}
-body.dark::-webkit-scrollbar-thumb {
-  background-color: #bbb;
-  border-radius: 6px;
-  border: 3px solid #fff;
-}
 body.dark .edina_tm_mobile_menu .mobile_menu_inner {
   background-color: #020713;
   box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.08%);
@@ -208,21 +193,6 @@ body.dark .edina_tm_modalbox .main_content .quotebox p {
 }
 body.dark .edina_tm_contact .mainpart .left .title span {
   color: #fff;
-}
-body.dark .edina_tm_modalbox .description_wrap::-webkit-scrollbar {
-  width: 11px;
-}
-body.dark .edina_tm_modalbox .description_wrap {
-  scrollbar-width: thin;
-  scrollbar-color: #333 #111;
-}
-body.dark .edina_tm_modalbox .description_wrap::-webkit-scrollbar-track {
-  background: #111;
-}
-body.dark .edina_tm_modalbox .description_wrap::-webkit-scrollbar-thumb {
-  background-color: #333;
-  border-radius: 6px;
-  border: 3px solid #111;
 }
 body.dark .edina_tm_modalbox .box_inner {
   background-color: #12161f;

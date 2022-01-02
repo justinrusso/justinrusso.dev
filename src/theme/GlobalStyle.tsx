@@ -67,6 +67,7 @@ const GlobalStyle = createGlobalStyle`
     --color-bg: #fff;
     --color-bg-hover: rgba(0, 0, 0, 0.05);
     --color-divider: rgba(0, 0, 0, 0.12);
+    --color-scrollbar: rgba(0, 0, 0, 0.25);
     --color-text-secondary: #7e7e7e;
     --color-text-primary: #1a1a1a;
   }
@@ -75,6 +76,7 @@ const GlobalStyle = createGlobalStyle`
     --color-bg: #111319;
     --color-bg-hover: rgba(255, 255, 255, 0.05);
     --color-divider: rgba(255, 255, 255, 0.12);
+    --color-scrollbar: rgba(255, 255, 255, 0.25);
     --color-text-secondary: #a9afc3;
     --color-text-primary: #fff;
   }
@@ -84,6 +86,23 @@ const GlobalStyle = createGlobalStyle`
     color: var(--color-text-secondary);
     stroke: var(--color-text-secondary);
     fill: var(--color-text-secondary);
+  }
+
+  /* Scrollbar Styles */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-scrollbar) var(--color-bg);
+  }
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+  *::-webkit-scrollbar-track {
+    background: var(--color-bg);
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--color-scrollbar);
+    border: 3px solid var(--color-bg);
+    border-radius: 10px;
   }
 
   h1,
