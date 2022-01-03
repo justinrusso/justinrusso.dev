@@ -73,7 +73,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   :root.dark {
-    --color-bg: #111319;
+    --color-bg: #0d1b27;
     --color-bg-hover: rgba(255, 255, 255, 0.05);
     --color-divider: rgba(255, 255, 255, 0.12);
     --color-scrollbar: rgba(255, 255, 255, 0.25);
