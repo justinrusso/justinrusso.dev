@@ -216,6 +216,7 @@ const ModalBackground = styled.div`
   bottom: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 
   @media screen and (min-width: 1200px) {
     display: none;
