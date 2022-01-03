@@ -4,7 +4,7 @@ import Hero from "../components/home/Hero";
 
 const Home: NextPage = () => {
   return (
-    <div className="home-light edina_tm_mainpart">
+    <>
       <Hero />
       <About />
 
@@ -49,7 +49,7 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

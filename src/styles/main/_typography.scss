@@ -13,11 +13,6 @@ This file is made by ib-themes (2021)
 /*------------------------------------------------------------------*/
 /*	BASE
 /*------------------------------------------------------------------*/
-* {
-  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box; /* Firefox, other Gecko */
-  box-sizing: border-box; /* Opera/IE 8+ */
-}
 
 html,
 body,
@@ -80,7 +75,6 @@ thead,
 tr,
 th,
 td {
-  background: transparent;
   border: 0;
   margin: 0;
   padding: 0;

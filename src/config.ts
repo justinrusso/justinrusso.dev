@@ -9,11 +9,6 @@ import {
 
 const config = {
   navLinks: [
-    {
-      Icon: FiHome,
-      name: "Home",
-      url: "/#home",
-    },
     { Icon: FiUser, name: "About", url: "/#about" },
     {
       Icon: FiBook,

@@ -1,23 +1,43 @@
 import { FC } from "react";
+import styled from "styled-components";
 import config from "../../config";
+
+const SkillsRoot = styled.ul`
+  width: 100%;
+  display: grid;
+  padding-top: 20px;
+  flex-wrap: wrap;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 10px;
+  color: var(--color-text-secondary);
+  list-style: none;
+
+  @media screen and (max-width: 575px) {
+    margin: 0;
+    grid-template-columns: 1fr;
+  }
+`;
+
+const Skill = styled.li`
+  padding-left: 20px;
+  position: relative;
+
+  &:before {
+    content: "▹";
+    position: absolute;
+    left: 0px;
+    color: var(--color-primary-dark);
+  }
+`;
 
 const Skills: FC = () => {
   return (
-    <>
+    <SkillsRoot>
       {config.recentSkills.map((name) => (
-        <div className="progress_inner" key={name}>
-          <span className="label">{name}</span>
-          {/* <div className="background">
-            <div className="bar">
-              <div
-                className="bar_in"
-                style={{ width: val.skillPercent + "%" }}
-              ></div>
-            </div>
-          </div> */}
-        </div>
+        <Skill key={name}>{name}</Skill>
       ))}
-    </>
+    </SkillsRoot>
   );
 };
 

@@ -1,17 +1,59 @@
-import { FC } from "react";
+import { CSSProperties, FC } from "react";
+import styled from "styled-components";
 import config from "../config";
 
-const Social: FC = () => {
+const SocialRoot = styled.ul`
+  margin: 0;
+  list-style-type: none;
+  list-style: none;
+`;
+
+const SocialListItem = styled.li`
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 15px;
+
+  &:not(:last-child) {
+    border-right: 1px solid var(--color-divider);
+  }
+`;
+
+const IconButton = styled.a`
+  color: var(--color-text-secondary);
+  line-height: 1;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    color: var(--color-primary-main);
+    svg {
+    }
+  }
+  svg {
+    fill: transparent;
+    color: inherit;
+    width: 22px;
+    height: 22px;
+  }
+`;
+
+interface SocialProps {
+  className?: string;
+  style?: CSSProperties;
+}
+
+const Social: FC<SocialProps> = ({ className, style }) => {
   return (
-    <ul>
+    <SocialRoot className={className} style={style}>
       {config.socials.map(({ Icon, name, url }) => (
-        <li key={name}>
-          <a href={url} target="_blank" rel="noreferrer" title={name}>
+        <SocialListItem key={name}>
+          <IconButton href={url} target="_blank" rel="noreferrer" title={name}>
             <Icon />
-          </a>
-        </li>
+          </IconButton>
+        </SocialListItem>
       ))}
-    </ul>
+    </SocialRoot>
   );
 };
 
