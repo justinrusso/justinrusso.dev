@@ -32,7 +32,7 @@ export const MobileButtonWrapper = styled.div`
     border-radius: 50%;
     padding: 0;
     border: none;
-    background-color: var(--color-text-primary);
+    background-color: var(--color-secondary-main);
   }
 `;
 
@@ -340,7 +340,7 @@ const Nav: FC = () => {
   return (
     <>
       <MobileButtonWrapper>
-        <Button onClick={handleClick}>
+        <Button onClick={handleClick} color="secondary">
           <MenuIcon className={menuOpen ? "active" : ""}>
             <span></span>
             <span></span>
