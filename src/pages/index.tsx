@@ -1,4 +1,6 @@
 import type { NextPage } from "next";
+
+import Container from "../components/common/Container";
 import About from "../components/home/About";
 import Hero from "../components/home/Hero";
 
@@ -9,7 +11,7 @@ const Home: NextPage = () => {
       <About />
 
       <div className="edina_tm_portfolio" id="portfolio">
-        <div className="container">
+        <Container>
           <div className="edina_tm_title">
             <h3>Portfolio</h3>
             <p>
@@ -18,11 +20,11 @@ const Home: NextPage = () => {
             </p>
           </div>
           {/* <Portfolio /> */}
-        </div>
+        </Container>
       </div>
 
       <div className="edina_tm_contact" id="contact">
-        <div className="container">
+        <Container>
           <div className="edina_tm_title">
             <h3>Contact</h3>
             <p>
@@ -47,7 +49,7 @@ const Home: NextPage = () => {
               <div className="fields">{/* <Contact /> */}</div>
             </div>
           </div>
-        </div>
+        </Container>
       </div>
     </>
   );

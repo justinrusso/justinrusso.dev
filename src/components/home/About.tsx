@@ -3,6 +3,7 @@ import Skills from "./Skills";
 import config from "../../config";
 import styled from "styled-components";
 import Image from "next/image";
+import Container from "../common/Container";
 
 const AboutRoot = styled.section`
   width: 100%;
@@ -86,7 +87,7 @@ const AboutRoot = styled.section`
 const About: FC = () => {
   return (
     <AboutRoot className="edina_tm_about" id="about">
-      <div className="container">
+      <Container>
         <h2 className="section-title">About Me</h2>
         <div className="content">
           <div
@@ -128,7 +129,7 @@ const About: FC = () => {
             </div>
           </div>
         </div>
-      </div>
+      </Container>
     </AboutRoot>
   );
 };
