@@ -5,7 +5,7 @@ import config from "../../config";
 import Button from "../common/Button";
 import Social from "../Social";
 
-export const HeroRoot = styled.section`
+const HeroRoot = styled.section`
   width: 100%;
   min-height: 100vh;
   position: relative;
@@ -85,7 +85,7 @@ const Hero: FC = () => {
             data-aos-duration="1200"
             data-aos-delay="400"
           >
-            <Button as="a" href="img/cv.png" download className="color">
+            <Button as="a" href="img/cv.png" download color="primary">
               Resume
             </Button>
           </HeroButtonWrapper>

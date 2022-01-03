@@ -1,15 +1,30 @@
 import styled from "styled-components";
-import { HeroRoot } from "../home/Hero";
 
-const Button = styled.button`
+interface ButtonProps {
+  color?: "primary" | "secondary" | "plain";
+}
+
+const Button = styled.button<ButtonProps>`
   text-decoration: none;
-  color: var(--color-text-primary);
+  color: var(
+    ${(p) =>
+      p.color === "plain" ? "--color-text-primary" : `--color-${p.color}-main`}
+  );
   cursor: pointer;
   font-weight: 500;
   font-size: 18px;
   display: inline-block;
   border-radius: 6px;
-  border: 2px solid var(--color-text-secondary);
+  border: 2px solid
+    rgba(
+      var(
+        ${(p) =>
+          p.color === "plain"
+            ? "--color-base-text"
+            : `--color-base-${p.color}-main`}
+      ),
+      0.5
+    );
   padding: 8px 35px 7px 35px;
   transition: all 0.3s ease;
 
@@ -18,18 +33,26 @@ const Button = styled.button`
   }
 
   &:hover {
-    color: var(--color-bg);
-    background-color: var(--color-text-primary);
-    border-color: var(--color-text-primary);
-  }
-
-  ${HeroRoot} & {
-    border-radius: 30px;
-
-    &:hover {
-      transform: translateY(-5px);
-    }
+    background-color: rgba(
+      var(
+        ${(p) =>
+          p.color === "plain"
+            ? "--color-base-text"
+            : `--color-base-${p.color}-main`}
+      ),
+      0.075
+    );
+    border-color: var(
+      ${(p) =>
+        p.color === "plain"
+          ? "--color-text-primary"
+          : `--color-${p.color}-main`}
+    );
   }
 `;
+
+Button.defaultProps = {
+  color: "plain",
+};
 
 export default Button;

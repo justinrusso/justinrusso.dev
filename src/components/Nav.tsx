@@ -390,12 +390,7 @@ const Nav: FC = () => {
                         transitionDelay: `${400}ms`,
                       }}
                     >
-                      <Button
-                        as="a"
-                        href="img/cv.png"
-                        download
-                        className="color"
-                      >
+                      <Button as="a" href="img/cv.png" download color="primary">
                         Resume
                       </Button>
                     </ResumeButtonWrapper>
