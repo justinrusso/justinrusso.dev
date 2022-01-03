@@ -34,7 +34,10 @@ const HeroRoot = styled.section`
   }
 
   h3 {
-    color: rgba(var(--color-base-secondary-light), 0.7);
+    color: rgba(
+      var(--color-base-secondary-light),
+      var(--text-secondary-opacity)
+    );
   }
 
   p {
