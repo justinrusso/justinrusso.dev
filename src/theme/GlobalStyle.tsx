@@ -64,36 +64,45 @@ const GlobalStyle = createGlobalStyle`
   :root {
     --border-radius: 6px;
 
-    --color-primary-dark: #44001b;
-    --color-primary-main: #732b41;
-    --color-primary-light: #a4576c;
-
-    --color-secondary-dark: #406374;
-    --color-secondary-main: #6d90a3;
-    --color-secondary-light: #9dc0d4;
+    --color-base-primary-dark: 68, 0, 27;
+    --color-base-primary-main: 115, 43, 65;
+    --color-base-primary-light: 164, 87, 108;
+    --color-base-secondary-dark: 64, 99, 116;
+    --color-base-secondary-main: 109, 144, 163;
+    --color-base-secondary-light: 157, 192, 212;
+    --color-base-text: 0, 0, 0;
+    
+    --color-primary-dark: rgb(var(--color-base-primary-dark));
+    --color-primary-main: rgb(var(--color-base-primary-main));
+    --color-primary-light: rgb(var(--color-base-primary-light));
+    --color-secondary-dark: rgb(var(--color-base-secondary-dark));
+    --color-secondary-main: rgb(var(--color-base-secondary-main));
+    --color-secondary-light: rgb(var(--color-base-secondary-light));
 
     --color-bg: #fff;
     --color-bg-hover: rgba(0, 0, 0, 0.05);
     --color-divider: rgba(0, 0, 0, 0.12);
     --color-scrollbar: rgba(0, 0, 0, 0.25);
-    --color-text-primary: rgba(0, 0, 0, 0.87);
-    --color-text-secondary: rgba(0, 0, 0, 0.6);
+
+    --color-text-primary: rgba(var(--color-base-text), 0.87);
+    --color-text-secondary: rgba(var(--color-base-text), 0.6);
   }
 
   :root.dark {
+    --color-base-primary-dark: 217, 84, 105;
+    --color-base-primary-main: 226, 108, 129;
+    --color-base-primary-light: 235, 147, 164;
+    --color-base-secondary-dark: 85, 126, 147;
+
     --color-bg: #0d1b27;
-
-    --color-primary-dark: #d95469;
-    --color-primary-main: #e26c81;
-    --color-primary-light: #eb93a4;
-
-    --color-secondary-dark: #557e93;
 
     --color-bg-hover: rgba(255, 255, 255, 0.05);
     --color-divider: rgba(255, 255, 255, 0.12);
     --color-scrollbar: rgba(255, 255, 255, 0.25);
-    --color-text-primary: #fff;
-    --color-text-secondary: rgba(255, 255, 255, 0.7);
+
+    --color-base-text: 255, 255, 255;
+    --color-text-primary: rgba(var(--color-base-text), 1);
+    --color-text-secondary: rgba(var(--color-base-text), 0.7);
   }
 
   body {
