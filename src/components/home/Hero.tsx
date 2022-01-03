@@ -24,7 +24,7 @@ const HeroRoot = styled.section`
     padding: 0px 0px 30px 4px;
     margin: 0;
     color: var(--color-primary-main);
-    font-size: clamp(14px, 5vw, 16px);
+    font-size: clamp(16px, 5vw, 20px);
     font-weight: 400;
   }
 
