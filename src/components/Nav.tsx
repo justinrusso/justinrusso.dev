@@ -10,6 +10,7 @@ import config from "../config";
 import { transitionDurations, transitionNames } from "../theme/transitions";
 import Social from "./Social";
 import Image from "next/image";
+import { underlinedLink } from "../theme/mixins";
 
 const ScrollspyNav = dynamic(() => import("react-scrollspy-nav"), {
   ssr: false,
@@ -191,15 +192,12 @@ const Sidebar = styled.div`
       }
 
       a {
+        ${underlinedLink}
+
         text-decoration: none;
         color: var(--color-text-secondary);
         font-size: 14px;
-
-        -webkit-transition: all 0.3s ease;
-        -moz-transition: all 0.3s ease;
-        -ms-transition: all 0.3s ease;
-        -o-transition: all 0.3s ease;
-        transition: all 0.3s ease;
+        transition: all 0.5s ease;
 
         &:hover {
           color: var(--color-primary-main);
