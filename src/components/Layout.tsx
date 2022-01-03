@@ -15,8 +15,11 @@ const Main = styled.main`
   clear: both;
   float: left;
   transition: all 0.5s ease;
-  @media screen and (min-width: 1200px) and (max-width: 1500px) {
+  @media screen and (min-width: 1200px) {
     padding-left: 288px;
+  }
+  @media screen and (min-width: 1501px) {
+    padding-left: 320px;
   }
 `;
 
