@@ -11,6 +11,7 @@ const Button = styled.button<ButtonProps>`
       p.color === "plain" ? "--color-text-primary" : `--color-${p.color}-main`}
   );
   cursor: pointer;
+  font-family: var(--font-mono);
   font-weight: 500;
   font-size: 18px;
   display: inline-block;

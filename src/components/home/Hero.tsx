@@ -14,24 +14,19 @@ const HeroRoot = styled.section`
   justify-content: center;
   flex-direction: column;
 
-  h1,
-  h2,
-  h3 {
-    line-height: 1.1;
-  }
-
   h1 {
-    padding: 0px 0px 30px 4px;
-    margin: 0;
+    padding: 0px 0px 20px 4px;
     color: var(--color-primary-main);
-    font-size: clamp(16px, 5vw, 20px);
+    font-size: clamp(16px, 5vw, 24px);
     font-weight: 400;
+    font-family: var(--font-sans);
   }
 
   h2,
   h3 {
-    margin: 0px;
+    padding: 0;
     font-size: clamp(40px, 8vw, 70px);
+    font-family: "Fira Code";
   }
 
   h2 {
@@ -45,6 +40,10 @@ const HeroRoot = styled.section`
   p {
     max-width: 540px;
     padding: 20px 0 0;
+  }
+
+  .no-wrap {
+    white-space: nowrap;
   }
 `;
 
@@ -78,7 +77,8 @@ const Hero: FC = () => {
           data-aos-delay="300"
           data-aos-once="true"
         >
-          I&apos;m a full-stack software engineer.
+          I&apos;m a full-stack{" "}
+          <span className="no-wrap">software engineer.</span>
         </h3>
         <p
           data-aos="fade-up"

@@ -11,9 +11,6 @@ import GlobalStyle from "../theme/GlobalStyle";
 
 const Main = styled.main`
   width: 100%;
-  height: auto;
-  clear: both;
-  float: left;
   transition: all 0.5s ease;
   @media screen and (min-width: 1200px) {
     padding-left: 288px;

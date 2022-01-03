@@ -86,6 +86,9 @@ const GlobalStyle = createGlobalStyle`
 
     --color-text-primary: rgba(var(--color-base-text), 0.87);
     --color-text-secondary: rgba(var(--color-base-text), 0.6);
+
+    --font-sans: "Poppins", -apple-system, system-ui, sans-serif;
+    --font-mono: "Fira Code", monospace;
   }
 
   :root.dark {
@@ -110,6 +113,10 @@ const GlobalStyle = createGlobalStyle`
     color: var(--color-text-secondary);
     stroke: var(--color-text-secondary);
     fill: var(--color-text-secondary);
+    font-family: var(--font-sans);
+    line-height: 1.3;
+    font-size: 18px;
+    font-weight: 400;
   }
 
   /* Scrollbar Styles */
@@ -136,6 +143,10 @@ const GlobalStyle = createGlobalStyle`
   h5,
   h6 {
     color: var(--color-text-primary);
+    font-family: var(--font-mono);
+    line-height: 1.1;
+    font-weight: 600;
+    padding: 0px 0px 10px;
   }
 
   ${transitions}
