@@ -14,7 +14,6 @@ const Main = styled.main`
   height: auto;
   clear: both;
   float: left;
-  padding-left: 320px;
   transition: all 0.5s ease;
   @media screen and (min-width: 1200px) and (max-width: 1500px) {
     padding-left: 288px;
