@@ -394,7 +394,7 @@ const Nav: FC = () => {
                       }}
                     >
                       <Button as="a" href="img/cv.png" download color="primary">
-                        Resume
+                        Résumé
                       </Button>
                     </ResumeButtonWrapper>
                   </CSSTransition>
