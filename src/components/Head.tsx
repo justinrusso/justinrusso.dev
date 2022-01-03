@@ -11,7 +11,6 @@ const seo = {
 const Head: FC = () => {
   return (
     <NextHead>
-      <html lang="en" />
       <meta charSet="utf-8" />
 
       <title>Justin Russo</title>
