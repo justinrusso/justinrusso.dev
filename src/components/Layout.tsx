@@ -23,7 +23,9 @@ const Main = styled.main`
 
 const Layout: FC = ({ children }) => {
   useEffect(() => {
-    AOS.init();
+    AOS.init({
+      easing: "ease-in-out-cubic",
+    });
   }, []);
   return (
     <>
