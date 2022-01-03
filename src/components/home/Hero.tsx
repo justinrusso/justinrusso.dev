@@ -1,53 +1,50 @@
-import Image from "next/image";
 import { FC } from "react";
 import styled from "styled-components";
+
 import config from "../../config";
 import Button from "../common/Button";
-import Social from "../Social";
+import Container from "../common/Container";
 
 const HeroRoot = styled.section`
   width: 100%;
   min-height: 100vh;
   position: relative;
   display: flex;
-  align-items: center;
+
   justify-content: center;
-  text-align: center;
+  flex-direction: column;
 
-  .content {
-    padding: 100px 20px;
+  h1,
+  h2,
+  h3 {
+    line-height: 1.1;
   }
 
-  .name {
-    font-size: 55px;
-    font-weight: 700;
-    margin-bottom: 14px;
-    line-height: 1.2;
-
-    @media (max-width: 768px) {
-      font-size: 36px;
-    }
-
-    @media (max-width: 480px) {
-      font-size: 35px;
-    }
+  h1 {
+    padding: 0px 0px 30px 4px;
+    margin: 0;
+    color: var(--color-primary-main);
+    font-size: clamp(14px, 5vw, 16px);
+    font-weight: 400;
   }
 
-  .extra {
-    position: relative;
-    opacity: 1;
-    visibility: visible;
-    left: 0px;
-    transition-delay: 0.8s;
-    transition: all 1s ease;
+  h2,
+  h3 {
+    margin: 0px;
+    font-size: clamp(40px, 8vw, 70px);
   }
 
-  .text {
-    max-width: 500px;
-    margin: 0px auto 32px auto;
-    @media screen and (max-width: 575px) {
-      font-size: 15px;
-    }
+  h2 {
+    color: var(--color-secondary-light);
+  }
+
+  h3 {
+    color: rgba(var(--color-base-secondary-light), 0.7);
+  }
+
+  p {
+    max-width: 540px;
+    padding: 20px 0 0;
   }
 `;
 
@@ -57,41 +54,55 @@ const HeroButtonWrapper = styled.div`
 
 const Hero: FC = () => {
   return (
-    <HeroRoot className="edina_tm_hero" id="home">
-      <div className="content">
-        <div className="extra">
-          <h1
-            className="name"
-            data-aos="fade-up"
-            data-aos-duration="1200"
-            data-aos-delay="100"
-          >
-            {config.personal.name}
-          </h1>
-          <p
-            className="text"
-            data-aos="fade-up"
-            data-aos-duration="1200"
-            data-aos-delay="200"
-          >
-            {config.personal.shortDescription}
-          </p>
-
-          <div data-aos="fade-up" data-aos-duration="1200" data-aos-delay="300">
-            <Social />
-          </div>
-          <HeroButtonWrapper
-            data-aos="fade-up"
-            data-aos-duration="1200"
-            data-aos-delay="400"
-          >
-            <Button as="a" href="img/cv.png" download color="primary">
-              Resume
-            </Button>
-          </HeroButtonWrapper>
-        </div>
-      </div>
-    </HeroRoot>
+    <Container>
+      <HeroRoot className="edina_tm_hero" id="home">
+        <h1
+          data-aos="fade-up"
+          data-aos-duration="500"
+          data-aos-delay="100"
+          data-aos-once="true"
+        >
+          Hello, my name is
+        </h1>
+        <h2
+          data-aos="fade-up"
+          data-aos-duration="500"
+          data-aos-delay="200"
+          data-aos-once="true"
+        >
+          {config.personal.name}.
+        </h2>
+        <h3
+          data-aos="fade-up"
+          data-aos-duration="500"
+          data-aos-delay="300"
+          data-aos-once="true"
+        >
+          I&apos;m a full-stack software engineer.
+        </h3>
+        <p
+          data-aos="fade-up"
+          data-aos-duration="500"
+          data-aos-delay="400"
+          data-aos-once="true"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec
+          dui felis. Sed ultrices diam et tincidunt ornare. Ut sit amet gravida
+          massa. Aliquam non turpis commodo, accumsan mi ut, ullamcorper nisi.
+          Suspendisse vitae nisi dignissim nibh fringilla fringilla non id quam.
+        </p>
+        <HeroButtonWrapper
+          data-aos="fade-up"
+          data-aos-duration="500"
+          data-aos-delay="500"
+          data-aos-once="true"
+        >
+          <Button as="a" href="img/cv.png" download color="primary">
+            Resume
+          </Button>
+        </HeroButtonWrapper>
+      </HeroRoot>
+    </Container>
   );
 };
 
