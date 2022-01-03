@@ -16,21 +16,6 @@ body.dark .my_trigger .hamburger .hamburger-inner {
 body.dark .edina_tm_mobile_menu .dropdown .dropdown_inner ul li a {
   color: #a9afc3;
 }
-body.dark .edina_tm_hero .image:before {
-  background-color: #393939;
-}
-body.dark .edina_tm_hero .social ul li .svg {
-  color: #a9afc3;
-}
-body.dark .edina_tm_hero .social ul li .svg.custom {
-  stroke: #a9afc3;
-}
-body.dark .edina_tm_hero .social ul li a:hover .svg {
-  color: #fff;
-}
-body.dark .edina_tm_hero .social ul li a:hover .svg.custom {
-  stroke: #fff;
-}
 
 body.dark .edina_tm_sidebar .menu ul li .list_inner.current a:before {
   background-color: #191c26;
@@ -85,28 +70,8 @@ body.dark .my_carousel ul .details span a {
 body.dark .my_carousel ul .details h3 {
   color: #fff;
 }
-body.dark .edina_tm_hero .social ul li a {
-  svg {
-    color: #a9afc3;
-  }
-  &:hover {
-    svg {
-      color: #fff;
-    }
-  }
-  &::after {
-    background: #444;
-  }
-}
 
 body.dark {
-  .edina_tm_hero .social ul li a {
-    &:hover {
-      svg {
-        color: #fff;
-      }
-    }
-  }
   .edina_tm_contact .right .google-map iframe {
     filter: invert(1);
   }

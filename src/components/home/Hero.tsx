@@ -55,7 +55,7 @@ const HeroButtonWrapper = styled.div`
 const Hero: FC = () => {
   return (
     <Container>
-      <HeroRoot className="edina_tm_hero" id="home">
+      <HeroRoot id="home">
         <h1
           data-aos="fade-up"
           data-aos-duration="500"
