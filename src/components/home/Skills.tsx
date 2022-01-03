@@ -7,7 +7,7 @@ const SkillsRoot = styled.ul`
   display: grid;
   padding-top: 20px;
   flex-wrap: wrap;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: max-content max-content;
   column-gap: 20px;
   row-gap: 10px;
   color: var(--color-text-secondary);
