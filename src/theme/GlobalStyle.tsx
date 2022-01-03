@@ -84,11 +84,14 @@ const GlobalStyle = createGlobalStyle`
     --color-divider: rgba(0, 0, 0, 0.12);
     --color-scrollbar: rgba(0, 0, 0, 0.25);
 
-    --color-text-primary: rgba(var(--color-base-text), 0.87);
-    --color-text-secondary: rgba(var(--color-base-text), 0.6);
+    --color-text-primary: rgba(var(--color-base-text), var(--text-primary-opacity));
+    --color-text-secondary: rgba(var(--color-base-text), var(--text-secondary-opacity));
 
     --font-sans: "Poppins", -apple-system, system-ui, sans-serif;
     --font-mono: "Fira Code", monospace;
+
+    --text-primary-opacity: 0.87;
+    --text-secondary-opacity: 0.6;
   }
 
   :root.dark {
@@ -104,8 +107,6 @@ const GlobalStyle = createGlobalStyle`
     --color-scrollbar: rgba(255, 255, 255, 0.25);
 
     --color-base-text: 255, 255, 255;
-    --color-text-primary: rgba(var(--color-base-text), 1);
-    --color-text-secondary: rgba(var(--color-base-text), 0.7);
   }
 
   body {
