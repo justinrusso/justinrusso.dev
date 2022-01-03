@@ -420,6 +420,7 @@ const Nav: FC = () => {
                         alt="hero image"
                         className="profile-picture"
                         layout="fill"
+                        priority
                       />
                     </div>
                     <div className="short">
