@@ -27,6 +27,7 @@ const Skill = styled.li`
     content: "▹";
     position: absolute;
     left: 0px;
+    color: var(--color-primary-dark);
   }
 `;
 
