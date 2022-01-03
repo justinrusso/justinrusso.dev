@@ -4,6 +4,7 @@ import config from "../../config";
 import styled from "styled-components";
 import Image from "next/image";
 import Container from "../common/Container";
+import SectionHeader from "../SectionHeader";
 
 const AboutRoot = styled.section`
   width: 100%;
@@ -13,12 +14,6 @@ const AboutRoot = styled.section`
   @media screen and (max-width: 991px) {
     padding-bottom: 140px;
     padding-top: 90px;
-  }
-
-  .section-title {
-    font-size: 45px;
-    font-weight: 700;
-    line-height: 1;
   }
 
   .content {
@@ -88,7 +83,7 @@ const About: FC = () => {
   return (
     <AboutRoot className="edina_tm_about" id="about">
       <Container>
-        <h2 className="section-title">About Me</h2>
+        <SectionHeader>About Me</SectionHeader>
         <div className="content">
           <div
             data-aos="fade-right"

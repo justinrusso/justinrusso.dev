@@ -4,6 +4,7 @@ import Container from "../components/common/Container";
 import About from "../components/home/About";
 import Hero from "../components/home/Hero";
 import WorkSection from "../components/home/WorkSection";
+import SectionHeader from "../components/SectionHeader";
 
 const Home: NextPage = () => {
   return (
@@ -15,7 +16,7 @@ const Home: NextPage = () => {
       <div className="edina_tm_contact" id="contact">
         <Container>
           <div className="edina_tm_title">
-            <h3>Contact</h3>
+            <SectionHeader>Contact</SectionHeader>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
               ipsum sit nibh amet egestas tellus.
