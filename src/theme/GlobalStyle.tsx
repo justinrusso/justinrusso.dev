@@ -64,6 +64,14 @@ const GlobalStyle = createGlobalStyle`
   :root {
     --border-radius: 6px;
 
+    --color-primary-dark: #44001b;
+    --color-primary-main: #732b41;
+    --color-primary-light: #a4576c;
+
+    --color-secondary-dark: #406374;
+    --color-secondary-main: #6d90a3;
+    --color-secondary-light: #9dc0d4;
+
     --color-bg: #fff;
     --color-bg-hover: rgba(0, 0, 0, 0.05);
     --color-divider: rgba(0, 0, 0, 0.12);
@@ -74,6 +82,13 @@ const GlobalStyle = createGlobalStyle`
 
   :root.dark {
     --color-bg: #0d1b27;
+
+    --color-primary-dark: #d95469;
+    --color-primary-main: #e26c81;
+    --color-primary-light: #eb93a4;
+
+    --color-secondary-dark: #557e93;
+
     --color-bg-hover: rgba(255, 255, 255, 0.05);
     --color-divider: rgba(255, 255, 255, 0.12);
     --color-scrollbar: rgba(255, 255, 255, 0.25);
