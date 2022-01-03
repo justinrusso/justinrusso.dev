@@ -200,6 +200,10 @@ const Sidebar = styled.div`
         -ms-transition: all 0.3s ease;
         -o-transition: all 0.3s ease;
         transition: all 0.3s ease;
+
+        &:hover {
+          color: var(--color-primary-main);
+        }
       }
     }
   }
