@@ -3,25 +3,14 @@ import type { NextPage } from "next";
 import Container from "../components/common/Container";
 import About from "../components/home/About";
 import Hero from "../components/home/Hero";
+import WorkSection from "../components/home/WorkSection";
 
 const Home: NextPage = () => {
   return (
     <>
       <Hero />
       <About />
-
-      <div className="edina_tm_portfolio" id="portfolio">
-        <Container>
-          <div className="edina_tm_title">
-            <h3>Portfolio</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-              ipsum sit nibh amet egestas tellus.
-            </p>
-          </div>
-          {/* <Portfolio /> */}
-        </Container>
-      </div>
+      <WorkSection />
 
       <div className="edina_tm_contact" id="contact">
         <Container>

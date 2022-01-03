@@ -371,7 +371,7 @@ const Nav: FC = () => {
             <div className="menu">
               {pathname === "/" ? (
                 <ScrollspyNav
-                  scrollTargetIds={["about", "portfolio", "contact"]}
+                  scrollTargetIds={["about", "work", "contact"]}
                   activeNavClass="active"
                   offset={0}
                   scrollDuration="100"
