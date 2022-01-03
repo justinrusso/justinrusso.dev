@@ -22,17 +22,17 @@ const SocialListItem = styled.li`
 const IconButton = styled.a`
   color: var(--color-text-secondary);
   line-height: 1;
+  transition: all 0.3s ease;
 
   &:hover {
     transform: translateY(-3px);
+    color: var(--color-primary-main);
     svg {
-      color: var(--color-text-secondary);
-      transition: all 0.3s ease;
     }
   }
   svg {
     fill: transparent;
-    color: var(--color-text-secondary);
+    color: inherit;
     width: 22px;
     height: 22px;
   }
