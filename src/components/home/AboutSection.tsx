@@ -2,10 +2,12 @@ import Image from "next/image";
 import styled from "styled-components";
 import { FC } from "react";
 
+import AnimateInView from "../utils/AnimateInView";
 import Skills from "./Skills";
 import config from "../../config";
 import Container from "../common/Container";
 import SectionHeader from "../SectionHeader";
+import { transitionNames } from "../../theme/transitions";
 
 const AboutRoot = styled.section`
   .content {
@@ -81,11 +83,14 @@ const AboutSection: FC = () => {
       <Container>
         <SectionHeader>About Me</SectionHeader>
         <div className="content">
-          <div
-            data-aos="fade-right"
-            data-aos-duration="1200"
-            data-aos-delay="100"
-            data-aos-once="true"
+          <AnimateInView
+            transitionProps={{
+              classNames: transitionNames.fadeRight,
+              timeout: 0,
+            }}
+            style={{
+              transitionDelay: "100ms",
+            }}
           >
             <div className="info">
               <h3>
@@ -100,13 +105,15 @@ const AboutSection: FC = () => {
               </p>
               <Skills />
             </div>
-          </div>
-          <div
-            className="portrait-side"
-            data-aos="fade-left"
-            data-aos-duration="1200"
-            data-aos-delay="200"
-            data-aos-once="true"
+          </AnimateInView>
+          <AnimateInView
+            transitionProps={{
+              classNames: transitionNames.fadeLeft,
+              timeout: 0,
+            }}
+            style={{
+              transitionDelay: "200ms",
+            }}
           >
             <div className="portrait-wrapper">
               <div className="one-to-one">
@@ -118,7 +125,7 @@ const AboutSection: FC = () => {
                 />
               </div>
             </div>
-          </div>
+          </AnimateInView>
         </div>
       </Container>
     </AboutRoot>

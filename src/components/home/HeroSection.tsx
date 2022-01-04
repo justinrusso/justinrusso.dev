@@ -1,8 +1,10 @@
 import { FC } from "react";
 import styled from "styled-components";
 
+import AnimateInView from "../utils/AnimateInView";
 import config from "../../config";
 import Container from "../common/Container";
+import { transitionNames } from "../../theme/transitions";
 
 const HeroRoot = styled.section`
   width: 100%;
@@ -52,42 +54,58 @@ const HeroSection: FC = () => {
   return (
     <Container>
       <HeroRoot id="home">
-        <h1
-          data-aos="fade-up"
-          data-aos-duration="500"
-          data-aos-delay="100"
-          data-aos-once="true"
+        <AnimateInView
+          as="h1"
+          transitionProps={{
+            classNames: transitionNames.fadeUp,
+            timeout: 0,
+          }}
+          style={{
+            transitionDelay: "100ms",
+          }}
         >
           Hello, my name is
-        </h1>
-        <h2
-          data-aos="fade-up"
-          data-aos-duration="500"
-          data-aos-delay="200"
-          data-aos-once="true"
+        </AnimateInView>
+        <AnimateInView
+          as="h2"
+          transitionProps={{
+            classNames: transitionNames.fadeUp,
+            timeout: 0,
+          }}
+          style={{
+            transitionDelay: "200ms",
+          }}
         >
           {config.personal.name}.
-        </h2>
-        <h3
-          data-aos="fade-up"
-          data-aos-duration="500"
-          data-aos-delay="300"
-          data-aos-once="true"
+        </AnimateInView>
+        <AnimateInView
+          as="h3"
+          transitionProps={{
+            classNames: transitionNames.fadeUp,
+            timeout: 0,
+          }}
+          style={{
+            transitionDelay: "300ms",
+          }}
         >
           I&apos;m a full-stack{" "}
           <span className="no-wrap">software engineer.</span>
-        </h3>
-        <p
-          data-aos="fade-up"
-          data-aos-duration="500"
-          data-aos-delay="400"
-          data-aos-once="true"
+        </AnimateInView>
+        <AnimateInView
+          as="p"
+          transitionProps={{
+            classNames: transitionNames.fadeUp,
+            timeout: 0,
+          }}
+          style={{
+            transitionDelay: "400ms",
+          }}
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec
           dui felis. Sed ultrices diam et tincidunt ornare. Ut sit amet gravida
           massa. Aliquam non turpis commodo, accumsan mi ut, ullamcorper nisi.
           Suspendisse vitae nisi dignissim nibh fringilla fringilla non id quam.
-        </p>
+        </AnimateInView>
       </HeroRoot>
     </Container>
   );

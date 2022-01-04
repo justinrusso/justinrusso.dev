@@ -2,7 +2,9 @@ import Link from "next/link";
 import styled from "styled-components";
 import { NextPage } from "next";
 
+import AnimateInView from "../components/utils/AnimateInView";
 import Button from "../components/common/Button";
+import { transitionNames } from "../theme/transitions";
 
 const Hero = styled.div`
   width: 100%;
@@ -41,27 +43,42 @@ const Custom404: NextPage = () => {
   return (
     <Hero>
       <div>
-        <Title data-aos="fade-up" data-aos-duration="1200">
+        <AnimateInView
+          as={Title}
+          transitionProps={{
+            classNames: transitionNames.fadeUp,
+            timeout: 0,
+          }}
+        >
           404!
-        </Title>
-        <Paragraph
-          data-aos="fade-up"
-          data-aos-duration="1200"
-          data-aos-delay="50"
+        </AnimateInView>
+        <AnimateInView
+          as={Paragraph}
+          transitionProps={{
+            classNames: transitionNames.fadeUp,
+            timeout: 0,
+          }}
+          style={{
+            transitionDelay: "50ms",
+          }}
         >
           The page you are looking for could not be found.
-        </Paragraph>
+        </AnimateInView>
 
-        <div
+        <AnimateInView
           className="edina_tm_button"
-          data-aos="fade-up"
-          data-aos-duration="1200"
-          data-aos-delay="100"
+          transitionProps={{
+            classNames: transitionNames.fadeUp,
+            timeout: 0,
+          }}
+          style={{
+            transitionDelay: "100ms",
+          }}
         >
           <Link href="/" passHref>
             <Button as="a">BACK HOME</Button>
           </Link>
-        </div>
+        </AnimateInView>
       </div>
     </Hero>
   );
