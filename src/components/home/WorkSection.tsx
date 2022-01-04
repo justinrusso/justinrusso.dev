@@ -6,7 +6,7 @@ import SectionHeader from "../SectionHeader";
 
 const WorkSection: FC = () => {
   return (
-    <div id="work">
+    <section id="work" className="home-section">
       <Container>
         <SectionHeader>Some of My Work</SectionHeader>
         <Project
@@ -32,7 +32,7 @@ const WorkSection: FC = () => {
           science, data science, machine learning, and more.
         </Project>
       </Container>
-    </div>
+    </section>
   );
 };
 

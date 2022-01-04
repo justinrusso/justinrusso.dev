@@ -7,15 +7,6 @@ import Container from "../common/Container";
 import SectionHeader from "../SectionHeader";
 
 const AboutRoot = styled.section`
-  width: 100%;
-  padding-bottom: 170px;
-  padding-top: 120px;
-
-  @media screen and (max-width: 991px) {
-    padding-bottom: 140px;
-    padding-top: 90px;
-  }
-
   .content {
     width: 100%;
     display: grid;
@@ -81,7 +72,7 @@ const AboutRoot = styled.section`
 
 const About: FC = () => {
   return (
-    <AboutRoot className="edina_tm_about" id="about">
+    <AboutRoot className="edina_tm_about home-section" id="about">
       <Container>
         <SectionHeader>About Me</SectionHeader>
         <div className="content">
