@@ -48,7 +48,7 @@ const HeroRoot = styled.section`
   }
 `;
 
-const Hero: FC = () => {
+const HeroSection: FC = () => {
   return (
     <Container>
       <HeroRoot id="home">
@@ -93,4 +93,4 @@ const Hero: FC = () => {
   );
 };
 
-export default Hero;
+export default HeroSection;

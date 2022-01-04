@@ -75,7 +75,7 @@ const AboutRoot = styled.section`
   }
 `;
 
-const About: FC = () => {
+const AboutSection: FC = () => {
   return (
     <AboutRoot className="edina_tm_about home-section" id="about">
       <Container>
@@ -125,4 +125,4 @@ const About: FC = () => {
   );
 };
 
-export default About;
+export default AboutSection;
