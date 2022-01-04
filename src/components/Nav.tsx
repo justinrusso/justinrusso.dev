@@ -261,10 +261,6 @@ const NavButton = styled(Button)`
   }
 `;
 
-const ResumeButtonWrapper = styled.div`
-  padding-top: 20px;
-`;
-
 const Nav: FC = () => {
   const { pathname } = useRouter();
   const [isMounted, setIsMounted] = useState(false);
@@ -381,25 +377,6 @@ const Nav: FC = () => {
               ) : (
                 NavLinks
               )}
-              <TransitionGroup component={null}>
-                {isMounted && (
-                  <CSSTransition
-                    classNames={transitionNames.fadeRight}
-                    timeout={transitionTimeout}
-                  >
-                    <ResumeButtonWrapper
-                      className={transitionNames.fadeRight}
-                      style={{
-                        transitionDelay: `${400}ms`,
-                      }}
-                    >
-                      <Button as="a" href="img/cv.png" download color="primary">
-                        Résumé
-                      </Button>
-                    </ResumeButtonWrapper>
-                  </CSSTransition>
-                )}
-              </TransitionGroup>
             </div>
           </div>
 

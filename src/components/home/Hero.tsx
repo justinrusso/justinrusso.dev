@@ -93,16 +93,6 @@ const Hero: FC = () => {
           massa. Aliquam non turpis commodo, accumsan mi ut, ullamcorper nisi.
           Suspendisse vitae nisi dignissim nibh fringilla fringilla non id quam.
         </p>
-        <HeroButtonWrapper
-          data-aos="fade-up"
-          data-aos-duration="500"
-          data-aos-delay="500"
-          data-aos-once="true"
-        >
-          <Button as="a" href="img/cv.png" download color="primary">
-            Résumé
-          </Button>
-        </HeroButtonWrapper>
       </HeroRoot>
     </Container>
   );
