@@ -26,7 +26,6 @@ const HeroRoot = styled.section`
   h3 {
     padding: 0;
     font-size: clamp(40px, 8vw, 70px);
-    font-family: "Fira Code";
   }
 
   h2 {
@@ -34,7 +33,10 @@ const HeroRoot = styled.section`
   }
 
   h3 {
-    color: rgba(var(--color-base-secondary-light), 0.7);
+    color: rgba(
+      var(--color-base-secondary-light),
+      var(--text-secondary-opacity)
+    );
   }
 
   p {

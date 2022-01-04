@@ -1,19 +1,13 @@
-import {
-  FiBook,
-  FiGithub,
-  FiHome,
-  FiLinkedin,
-  FiMail,
-  FiUser,
-} from "react-icons/fi";
+import { FiGithub, FiLinkedin, FiMail, FiUser } from "react-icons/fi";
+import { BsJournalCode } from "react-icons/bs";
 
 const config = {
   navLinks: [
     { Icon: FiUser, name: "About", url: "/#about" },
     {
-      Icon: FiBook,
-      name: "Portfolio",
-      url: "/#portfolio",
+      Icon: BsJournalCode,
+      name: "Work",
+      url: "/#work",
     },
     {
       Icon: FiMail,

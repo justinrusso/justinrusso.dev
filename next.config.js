@@ -4,5 +4,8 @@ module.exports = {
     locales: ["en"],
     defaultLocale: "en",
   },
+  images: {
+    domains: ["github.com"],
+  },
   reactStrictMode: true,
 };
