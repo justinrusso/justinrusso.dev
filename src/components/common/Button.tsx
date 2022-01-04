@@ -49,6 +49,12 @@ const Button = styled.button<ButtonProps>`
           ? "--color-text-primary"
           : `--color-${p.color}-main`}
     );
+    color: var(
+      ${(p) =>
+        p.color === "plain"
+          ? "--color-text-primary"
+          : `--color-${p.color}-main`}
+    );
   }
 `;
 
