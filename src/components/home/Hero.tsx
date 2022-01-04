@@ -26,7 +26,6 @@ const HeroRoot = styled.section`
   h3 {
     padding: 0;
     font-size: clamp(40px, 8vw, 70px);
-    font-family: "Fira Code";
   }
 
   h2 {
