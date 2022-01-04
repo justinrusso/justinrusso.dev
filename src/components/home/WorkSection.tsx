@@ -19,6 +19,18 @@ const WorkSection: FC = () => {
           Slurp is the perfect way to find the best Ramen in your area and is
           inspired by Yelp.
         </Project>
+        <Project
+          name="CodeX"
+          url="https://codexappaa.herokuapp.com/"
+          imageSrc="https://github.com/kvh8899/week13-project/raw/main/docs/images/screens-readme/homepage.png"
+          repoUrl="https://github.com/kvh8899/week13-project"
+          tech={["JavaScript", "Express", "Pug", "PostgreSQL"]}
+        >
+          CodeX is an online publishing platform, for members of the tech
+          industry, inspired by Medium.com. On it, you can write, read, and
+          connect with others, on such topics as: software engineering, computer
+          science, data science, machine learning, and more.
+        </Project>
       </Container>
     </div>
   );
