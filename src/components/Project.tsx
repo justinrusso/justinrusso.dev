@@ -75,7 +75,7 @@ const ProjectLinks = styled.div`
   display: flex;
   align-items: center;
   position: relative;
-  padding-top: 10px;
+  padding-top: 6px;
   margin-left: -10px;
 
   a {
@@ -83,6 +83,13 @@ const ProjectLinks = styled.div`
     justify-content: center;
     align-items: center;
     padding: 10px;
+
+    svg {
+      fill: transparent;
+      color: inherit;
+      width: 22px;
+      height: 22px;
+    }
   }
 
   ${ProjectRoot}:nth-of-type(2n+1) & {
