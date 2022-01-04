@@ -92,6 +92,8 @@ const GlobalStyle = createGlobalStyle`
 
     --text-primary-opacity: 0.87;
     --text-secondary-opacity: 0.6;
+
+    --transition: all 200ms cubic-bezier(0.65, 0, 0.35, 1);
   }
 
   :root.dark {
@@ -148,6 +150,19 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.1;
     font-weight: 600;
     padding: 0px 0px 10px;
+  }
+
+  a {
+    display: inline-block;
+    text-decoration: none;
+    text-decoration-skip-ink: auto;
+    color: inherit;
+    position: relative;
+    transition: var(--transition);
+
+    &:hover {
+      color: var(--color-primary-main);
+    }
   }
 
   ${transitions}
