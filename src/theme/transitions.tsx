@@ -33,7 +33,7 @@ const transitions = css`
   }
 
   .${transitionNames.fade} {
-    transition: opacity ${transitionDurations.fade}ms ease;
+    transition: opacity ${transitionDurations.fade}ms var(--easing);
   }
 
   .${transitionNames.fade}-enter {
