@@ -165,6 +165,17 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
+  .home-section {
+    width: 100%;
+    padding-bottom: 170px;
+    padding-top: 120px;
+
+    @media screen and (max-width: 991px) {
+      padding-bottom: 140px;
+      padding-top: 90px;
+    }
+  }
+
   ${transitions}
 `;
 

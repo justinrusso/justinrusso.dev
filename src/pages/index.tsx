@@ -1,10 +1,9 @@
 import type { NextPage } from "next";
 
-import Container from "../components/common/Container";
 import About from "../components/home/About";
+import ContactSection from "../components/home/ContactSection";
 import Hero from "../components/home/Hero";
 import WorkSection from "../components/home/WorkSection";
-import SectionHeader from "../components/SectionHeader";
 
 const Home: NextPage = () => {
   return (
@@ -12,35 +11,7 @@ const Home: NextPage = () => {
       <Hero />
       <About />
       <WorkSection />
-
-      <div className="edina_tm_contact" id="contact">
-        <Container>
-          <div className="edina_tm_title">
-            <SectionHeader>Contact</SectionHeader>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-              ipsum sit nibh amet egestas tellus.
-            </p>
-          </div>
-          <div className="extra_info">{/* <Address /> */}</div>
-          <div className="mainpart">
-            <div
-              className="left"
-              data-aos="fade-right"
-              data-aos-duration="1200"
-              data-aos-delay="300"
-            >
-              <div className="title">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Mauris ipsum sit nibh amet egestas tellus.
-                </p>
-              </div>
-              <div className="fields">{/* <Contact /> */}</div>
-            </div>
-          </div>
-        </Container>
-      </div>
+      <ContactSection />
     </>
   );
 };
