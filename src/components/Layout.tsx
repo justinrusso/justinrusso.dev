@@ -1,7 +1,4 @@
-import "aos/dist/aos.css";
-
 import { FC, useEffect } from "react";
-import AOS from "aos";
 import styled from "styled-components";
 
 import Footer from "./Footer";
@@ -21,11 +18,6 @@ const Main = styled.main`
 `;
 
 const Layout: FC = ({ children }) => {
-  useEffect(() => {
-    AOS.init({
-      easing: "ease-in-out-cubic",
-    });
-  }, []);
   return (
     <>
       <Head />
