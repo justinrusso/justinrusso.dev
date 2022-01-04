@@ -1,5 +1,6 @@
-import { CSSProperties, FC } from "react";
 import styled from "styled-components";
+import { CSSProperties, FC } from "react";
+
 import config from "../config";
 
 const SocialRoot = styled.ul`

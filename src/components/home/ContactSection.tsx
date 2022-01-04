@@ -1,9 +1,9 @@
-import { FC } from "react";
 import styled from "styled-components";
-import config from "../../config";
-import Button from "../common/Button";
+import { FC } from "react";
 
+import Button from "../common/Button";
 import Container from "../common/Container";
+import config from "../../config";
 
 const ContactSectionHeader = styled.h2`
   font-size: clamp(40px, 5vw, 60px);

@@ -1,8 +1,9 @@
-import { FC, useState } from "react";
+import Image from "next/image";
+import styled from "styled-components";
+import { FC } from "react";
+
 import Skills from "./Skills";
 import config from "../../config";
-import styled from "styled-components";
-import Image from "next/image";
 import Container from "../common/Container";
 import SectionHeader from "../SectionHeader";
 

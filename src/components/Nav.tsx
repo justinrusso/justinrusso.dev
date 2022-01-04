@@ -1,15 +1,15 @@
+import Image from "next/image";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import styled from "styled-components";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { FC, useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 import Button from "./common/Button";
-import config from "../config";
-import { transitionDurations, transitionNames } from "../theme/transitions";
 import Social from "./Social";
-import Image from "next/image";
+import config from "../config";
+import { transitionNames } from "../theme/transitions";
 import { underlinedLink } from "../theme/mixins";
 
 const ScrollspyNav = dynamic(() => import("react-scrollspy-nav"), {

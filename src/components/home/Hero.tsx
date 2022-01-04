@@ -2,7 +2,6 @@ import { FC } from "react";
 import styled from "styled-components";
 
 import config from "../../config";
-import Button from "../common/Button";
 import Container from "../common/Container";
 
 const HeroRoot = styled.section`
@@ -47,10 +46,6 @@ const HeroRoot = styled.section`
   .no-wrap {
     white-space: nowrap;
   }
-`;
-
-const HeroButtonWrapper = styled.div`
-  padding-top: 25px;
 `;
 
 const Hero: FC = () => {

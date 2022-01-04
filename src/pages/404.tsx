@@ -1,6 +1,7 @@
-import { NextPage } from "next";
 import Link from "next/link";
 import styled from "styled-components";
+import { NextPage } from "next";
+
 import Button from "../components/common/Button";
 
 const Hero = styled.div`

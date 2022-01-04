@@ -1,7 +1,7 @@
 import Image from "next/image";
+import styled from "styled-components";
 import { FC, PropsWithChildren } from "react";
 import { FiExternalLink, FiGithub } from "react-icons/fi";
-import styled from "styled-components";
 
 const ProjectRoot = styled.li`
   position: relative;

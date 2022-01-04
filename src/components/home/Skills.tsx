@@ -1,5 +1,6 @@
-import { FC } from "react";
 import styled from "styled-components";
+import { FC } from "react";
+
 import config from "../../config";
 
 const SkillsRoot = styled.ul`
