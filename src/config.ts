@@ -43,6 +43,7 @@ const config = {
     "Node.js",
     "React",
     "Redux",
+    "Electron",
   ],
 };
 
