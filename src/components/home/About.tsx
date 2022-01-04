@@ -62,6 +62,10 @@ const AboutRoot = styled.section`
   .portrait-wrapper {
     max-width: 300px;
     width: 100%;
+
+    img {
+      border-radius: var(--border-radius);
+    }
   }
 
   .one-to-one {
