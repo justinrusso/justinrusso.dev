@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { CSSTransition } from "react-transition-group";
 import {
   createElement,
@@ -35,15 +36,13 @@ const AnimateInView: FC<PropsWithChildren<AnimateInViewProps>> = ({
     transitionProps?.classNames &&
     `${transitionProps?.classNames} ${transitionProps?.classNames}-enter`;
 
-  const wrapperClasses = `${transitionWrapperClasses || ""} ${className}`;
-
   return (
     <CSSTransition in={inView} timeout={0} {...transitionProps}>
       {createElement(
         as || "div",
         {
           ref: ref,
-          className: wrapperClasses,
+          className: clsx(transitionWrapperClasses, className),
           style,
         },
         children
