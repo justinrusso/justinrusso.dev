@@ -86,7 +86,6 @@ const AboutSection: FC = () => {
           <AnimateInView
             transitionProps={{
               classNames: transitionNames.fadeRight,
-              timeout: 0,
             }}
             style={{
               transitionDelay: "100ms",
@@ -109,7 +108,6 @@ const AboutSection: FC = () => {
           <AnimateInView
             transitionProps={{
               classNames: transitionNames.fadeLeft,
-              timeout: 0,
             }}
             style={{
               transitionDelay: "200ms",

@@ -151,7 +151,6 @@ const Project: FC<PropsWithChildren<ProjectProps>> = ({
       as={ProjectRoot}
       transitionProps={{
         classNames: transitionNames.fadeUp,
-        timeout: 0,
       }}
     >
       <ProjectContent>

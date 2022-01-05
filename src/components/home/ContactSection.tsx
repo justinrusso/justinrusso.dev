@@ -34,7 +34,6 @@ const ContactSection: FC = () => {
           <AnimateInView
             transitionProps={{
               classNames: transitionNames.fadeUp,
-              timeout: 0,
             }}
           >
             <div className="contact-root-inner">

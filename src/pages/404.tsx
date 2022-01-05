@@ -47,7 +47,6 @@ const Custom404: NextPage = () => {
           as={Title}
           transitionProps={{
             classNames: transitionNames.fadeUp,
-            timeout: 0,
           }}
         >
           404!
@@ -56,7 +55,6 @@ const Custom404: NextPage = () => {
           as={Paragraph}
           transitionProps={{
             classNames: transitionNames.fadeUp,
-            timeout: 0,
           }}
           style={{
             transitionDelay: "50ms",
@@ -69,7 +67,6 @@ const Custom404: NextPage = () => {
           className="edina_tm_button"
           transitionProps={{
             classNames: transitionNames.fadeUp,
-            timeout: 0,
           }}
           style={{
             transitionDelay: "100ms",

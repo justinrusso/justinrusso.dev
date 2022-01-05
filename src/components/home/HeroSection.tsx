@@ -58,7 +58,6 @@ const HeroSection: FC = () => {
           as="h1"
           transitionProps={{
             classNames: transitionNames.fadeUp,
-            timeout: 0,
           }}
           style={{
             transitionDelay: "100ms",
@@ -70,7 +69,6 @@ const HeroSection: FC = () => {
           as="h2"
           transitionProps={{
             classNames: transitionNames.fadeUp,
-            timeout: 0,
           }}
           style={{
             transitionDelay: "200ms",
@@ -82,7 +80,6 @@ const HeroSection: FC = () => {
           as="h3"
           transitionProps={{
             classNames: transitionNames.fadeUp,
-            timeout: 0,
           }}
           style={{
             transitionDelay: "300ms",
@@ -95,7 +92,6 @@ const HeroSection: FC = () => {
           as="p"
           transitionProps={{
             classNames: transitionNames.fadeUp,
-            timeout: 0,
           }}
           style={{
             transitionDelay: "400ms",
