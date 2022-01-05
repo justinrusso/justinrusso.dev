@@ -12,9 +12,54 @@ const ProjectRoot = styled.li`
   gap: 10px;
   grid-template-columns: repeat(12, 1fr);
   align-items: center;
+  box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.5);
+  transition: var(--transition);
 
   &:not(:last-of-type) {
-    padding-bottom: 100px;
+    margin-bottom: 70px;
+
+    @media (min-width: 900px) {
+      margin-bottom: 100px;
+    }
+  }
+
+  @media (min-width: 900px) {
+    box-shadow: none;
+    transition: none;
+  }
+`;
+
+const ProjectContent = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  grid-area: 1 / 1 / -1 / 7;
+  grid-column: 1 / -1;
+  padding: 40px 40px 30px;
+  z-index: 5;
+
+  @media (min-width: 900px) {
+    grid-column: 1 / 9;
+  }
+
+  @media (min-width: 1200px) {
+  }
+
+  ${ProjectRoot}:nth-of-type(2n+1) & {
+    padding: 40px 40px 30px;
+    text-align: left;
+
+    @media (min-width: 900px) {
+      grid-column: 5 / -1;
+      padding: 0;
+      text-align: right;
+    }
+
+    @media (min-width: 1200px) {
+      grid-column: 7 / -1;
+    }
   }
 
   .project-title {
@@ -26,27 +71,21 @@ const ProjectRoot = styled.li`
   }
 
   .project-description {
-    box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.5);
     transition: var(--transition);
     position: relative;
     z-index: 2;
-    padding: 25px;
+    padding: 20px 0;
     border-radius: var(--border-radius);
-    background-color: var(--color-bg);
-    background-image: linear-gradient(
-      rgba(255, 255, 255, 0.07),
-      rgba(255, 255, 255, 0.07)
-    );
-  }
-`;
 
-const ProjectContent = styled.div`
-  position: relative;
-  grid-area: 1 / 1 / -1 / 7;
-
-  ${ProjectRoot}:nth-of-type(2n+1) & {
-    grid-column: 7 / -1;
-    text-align: right;
+    @media (min-width: 900px) {
+      background-color: var(--color-bg);
+      background-image: linear-gradient(
+        rgba(255, 255, 255, 0.07),
+        rgba(255, 255, 255, 0.07)
+      );
+      box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.5);
+      padding: 25px;
+    }
   }
 `;
 
@@ -65,11 +104,13 @@ const TechList = styled.ul`
     white-space: nowrap;
   }
 
-  ${ProjectRoot}:nth-of-type(2n+1) & {
-    justify-content: flex-end;
+  @media (min-width: 900px) {
+    ${ProjectRoot}:nth-of-type(2n+1) & {
+      justify-content: flex-end;
 
-    li {
-      padding: 0 0 5px 20px;
+      li {
+        padding: 0 0 5px 20px;
+      }
     }
   }
 `;
@@ -94,23 +135,33 @@ const ProjectLinks = styled.div`
       height: 22px;
     }
   }
-
-  ${ProjectRoot}:nth-of-type(2n+1) & {
-    justify-content: flex-end;
-    margin-left: 0px;
-    margin-right: -10px;
+  @media (min-width: 900px) {
+    ${ProjectRoot}:nth-of-type(2n+1) & {
+      justify-content: flex-end;
+      margin-left: 0px;
+      margin-right: -10px;
+    }
   }
 `;
 
 const ProjectImageWrapper = styled.div`
-  box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.5);
   transition: var(--transition);
-  grid-area: 1 / 6 / -1 / -1;
   position: relative;
+  grid-area: 1 / 6 / -1 / -1;
+  grid-column: 1 / -1;
   z-index: 1;
+  height: 100%;
+
+  @media (min-width: 900px) {
+    box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.5);
+    grid-column: 6 / -1;
+    height: auto;
+  }
 
   ${ProjectRoot}:nth-of-type(2n+1) & {
-    grid-column: 1 / 8;
+    @media (min-width: 900px) {
+      grid-column: 1 / 8;
+    }
   }
 
   a {
@@ -119,11 +170,37 @@ const ProjectImageWrapper = styled.div`
     border-radius: var(--border-radius);
     vertical-align: middle;
     position: relative;
-    filter: grayscale(0.9);
     transition: var(--transition);
 
-    &:hover {
-      filter: none;
+    @media (min-width: 900px) {
+      filter: grayscale(0.9);
+
+      &:hover {
+        filter: none;
+      }
+    }
+  }
+
+  a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0px;
+    z-index: 3;
+    background-color: var(--color-bg);
+    mix-blend-mode: screen;
+
+    @media (min-width: 900px) {
+      display: none;
+    }
+  }
+
+  a > * {
+    opacity: 0.1 !important;
+
+    @media (min-width: 900px) {
+      opacity: 1 !important;
     }
   }
 `;

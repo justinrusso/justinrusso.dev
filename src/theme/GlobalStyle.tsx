@@ -64,6 +64,7 @@ const GlobalStyle = createGlobalStyle`
   :root {
     --border-radius: 6px;
 
+    --color-base-bg: 255, 255, 255;
     --color-base-primary-dark: 68, 0, 27;
     --color-base-primary-main: 115, 43, 65;
     --color-base-primary-light: 164, 87, 108;
@@ -79,7 +80,7 @@ const GlobalStyle = createGlobalStyle`
     --color-secondary-main: rgb(var(--color-base-secondary-main));
     --color-secondary-light: rgb(var(--color-base-secondary-light));
 
-    --color-bg: #fff;
+    --color-bg: rgb(var(--color-base-bg));
     --color-bg-hover: rgba(0, 0, 0, 0.05);
     --color-divider: rgba(0, 0, 0, 0.12);
     --color-scrollbar: rgba(0, 0, 0, 0.25);
@@ -98,12 +99,11 @@ const GlobalStyle = createGlobalStyle`
   }
 
   :root.dark {
+    --color-base-bg: 13, 27, 39;
     --color-base-primary-dark: 217, 84, 105;
     --color-base-primary-main: 226, 108, 129;
     --color-base-primary-light: 235, 147, 164;
     --color-base-secondary-dark: 85, 126, 147;
-
-    --color-bg: #0d1b27;
 
     --color-bg-hover: rgba(255, 255, 255, 0.05);
     --color-divider: rgba(255, 255, 255, 0.12);
