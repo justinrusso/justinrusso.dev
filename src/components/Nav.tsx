@@ -231,11 +231,6 @@ const NavButton = styled(Button)`
   position: relative;
   border: none;
 
-  @media screen and (max-width: 1199px) {
-    font-size: 14px;
-    padding: 5px 15px;
-  }
-
   /* Reset the hover props from Button */
   &:hover {
     color: var(--color-text-primary);
