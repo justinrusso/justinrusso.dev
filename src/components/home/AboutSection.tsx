@@ -53,13 +53,13 @@ const AboutRoot = styled.section`
       max-width: 90%;
     }
   }
+`;
 
-  .portrait-side {
-    display: flex;
+const PortraitSide = styled.div`
+  display: flex;
 
-    @media screen and (max-width: 1040px) {
-      justify-content: center;
-    }
+  @media screen and (max-width: 1040px) {
+    justify-content: center;
   }
 
   .portrait-wrapper {
@@ -106,6 +106,7 @@ const AboutSection: FC = () => {
             </div>
           </AnimateInView>
           <AnimateInView
+            as={PortraitSide}
             transitionProps={{
               classNames: transitionNames.fadeLeft,
             }}
