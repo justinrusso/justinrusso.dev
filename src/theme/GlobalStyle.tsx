@@ -168,12 +168,10 @@ const GlobalStyle = createGlobalStyle`
 
   .home-section {
     width: 100%;
-    padding-bottom: 170px;
-    padding-top: 120px;
+    padding: 80px 0;
 
-    @media screen and (max-width: 991px) {
-      padding-bottom: 140px;
-      padding-top: 90px;
+    @media (min-width: 768px) {
+      padding: 100px 0;
     }
   }
 
