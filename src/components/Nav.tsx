@@ -11,6 +11,7 @@ import Social from "./Social";
 import config from "../config";
 import { transitionNames } from "../theme/transitions";
 import { underlinedLink } from "../theme/mixins";
+import { zIndexes } from "../theme/utils";
 
 const ScrollspyNav = dynamic(() => import("react-scrollspy-nav"), {
   ssr: false,
@@ -20,7 +21,7 @@ export const MobileButtonWrapper = styled.div`
   position: fixed;
   right: 20px;
   bottom: 20px;
-  z-index: 11;
+  z-index: ${zIndexes.modalBackground + 1};
   display: none;
   @media screen and (max-width: 1199px) {
     display: block;
@@ -82,7 +83,7 @@ const Sidebar = styled.div`
   position: fixed;
   top: 0px;
   left: 0;
-  z-index: 99;
+  z-index: ${zIndexes.modal};
   transition: all 0.5s ease;
   border-right: 1px solid var(--color-divider);
   background-color: var(--color-bg);
@@ -215,7 +216,7 @@ const ModalBackground = styled.div`
   bottom: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 1;
+  z-index: ${zIndexes.modalBackground};
 
   @media screen and (min-width: 1200px) {
     display: none;
