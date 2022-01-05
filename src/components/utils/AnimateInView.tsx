@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import { CSSTransition } from "react-transition-group";
+import { IntersectionOptions, useInView } from "react-intersection-observer";
 import {
   createElement,
   CSSProperties,
@@ -7,7 +8,6 @@ import {
   FC,
   PropsWithChildren,
 } from "react";
-import { useInView } from "react-intersection-observer";
 import type { CSSTransitionProps } from "react-transition-group/CSSTransition";
 
 type AnimateInViewProps = {
@@ -17,6 +17,7 @@ type AnimateInViewProps = {
    */
   as?: ElementType<any>;
   className?: string;
+  intersectionOptions?: IntersectionOptions;
   style?: CSSProperties;
   transitionProps?: Omit<CSSTransitionProps, "in">;
 };
@@ -25,11 +26,14 @@ const AnimateInView: FC<PropsWithChildren<AnimateInViewProps>> = ({
   as,
   children,
   className,
+  intersectionOptions,
   style,
   transitionProps,
 }) => {
   const { ref, inView } = useInView({
+    threshold: 0.2,
     triggerOnce: true,
+    ...intersectionOptions,
   });
 
   const transitionWrapperClasses =
