@@ -175,27 +175,31 @@ const ProjectImageWrapper = styled.div`
     position: relative;
     transition: var(--transition);
 
-    @media (min-width: 900px) {
-      filter: grayscale(0.9);
+    &:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      inset: 0px;
+      z-index: 3;
+      background-color: var(--color-bg);
+      mix-blend-mode: screen;
 
-      &:hover {
-        filter: none;
+      @media (min-width: 900px) {
+        background-color: rgb(68, 0, 27);
       }
     }
-  }
-
-  a:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    inset: 0px;
-    z-index: 3;
-    background-color: var(--color-bg);
-    mix-blend-mode: screen;
 
     @media (min-width: 900px) {
-      display: none;
+      opacity: 0.5;
+
+      &:hover {
+        opacity: 1;
+
+        &:before {
+          background-color: transparent;
+        }
+      }
     }
   }
 
