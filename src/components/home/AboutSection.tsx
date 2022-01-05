@@ -79,7 +79,7 @@ const PortraitSide = styled.div`
 
 const AboutSection: FC = () => {
   return (
-    <AboutRoot className="edina_tm_about home-section" id="about">
+    <AboutRoot className="home-section" id="about">
       <Container>
         <SectionHeader>About Me</SectionHeader>
         <div className="content">

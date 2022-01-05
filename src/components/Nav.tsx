@@ -342,9 +342,7 @@ const Nav: FC = () => {
           </MenuIcon>
         </Button>
       </MobileButtonWrapper>
-      <Sidebar
-        className={menuOpen ? "edina_tm_sidebar menu-open" : "edina_tm_sidebar"}
-      >
+      <Sidebar className={menuOpen ? "menu-open" : ""}>
         <div className="sidebar_inner">
           <div>
             <TransitionGroup component={null}>

@@ -64,7 +64,6 @@ const Custom404: NextPage = () => {
         </AnimateInView>
 
         <AnimateInView
-          className="edina_tm_button"
           transitionProps={{
             classNames: transitionNames.fadeUp,
           }}
