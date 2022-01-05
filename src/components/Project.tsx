@@ -42,9 +42,7 @@ const ProjectContent = styled.div`
 
   @media (min-width: 900px) {
     grid-column: 1 / 9;
-  }
-
-  @media (min-width: 1200px) {
+    pointer-events: none;
   }
 
   ${ProjectRoot}:nth-of-type(2n+1) & {
@@ -64,6 +62,8 @@ const ProjectContent = styled.div`
 
   .project-title {
     font-size: clamp(24px, 5vw, 28px);
+    display: inline-block;
+    pointer-events: auto;
 
     @media (min-width: 768px) {
       padding: 0 0 20px;
@@ -76,6 +76,7 @@ const ProjectContent = styled.div`
     z-index: 2;
     padding: 20px 0;
     border-radius: var(--border-radius);
+    pointer-events: auto;
 
     @media (min-width: 900px) {
       background-color: var(--color-bg);
@@ -99,6 +100,7 @@ const TechList = styled.ul`
 
   li {
     padding: 0 20px 5px 0;
+    pointer-events: auto;
     font-family: var(--font-mono);
     font-size: 13px;
     white-space: nowrap;
@@ -127,6 +129,7 @@ const ProjectLinks = styled.div`
     justify-content: center;
     align-items: center;
     padding: 10px;
+    pointer-events: auto;
 
     svg {
       fill: transparent;
@@ -231,11 +234,13 @@ const Project: FC<PropsWithChildren<ProjectProps>> = ({
       }}
     >
       <ProjectContent>
-        <h3 className="project-title">
-          <a href={primaryLink} rel="noopener noreferrer" target="_blank">
-            {name}
-          </a>
-        </h3>
+        <div>
+          <h3 className="project-title">
+            <a href={primaryLink} rel="noopener noreferrer" target="_blank">
+              {name}
+            </a>
+          </h3>
+        </div>
         <div className="project-description">
           <p>{children}</p>
         </div>
