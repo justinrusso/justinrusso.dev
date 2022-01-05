@@ -363,7 +363,7 @@ const Nav: FC = () => {
               )}
             </TransitionGroup>
 
-            <div className="menu">
+            <nav className="menu">
               {pathname === "/" ? (
                 <ScrollspyNav
                   scrollTargetIds={["about", "work", "contact"]}
@@ -376,7 +376,7 @@ const Nav: FC = () => {
               ) : (
                 NavLinks
               )}
-            </div>
+            </nav>
           </div>
 
           <div className="bottom">
