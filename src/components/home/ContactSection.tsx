@@ -1,9 +1,11 @@
 import styled from "styled-components";
 import { FC } from "react";
 
+import AnimateInView from "../utils/AnimateInView";
 import Button from "../common/Button";
 import Container from "../common/Container";
 import config from "../../config";
+import { transitionNames } from "../../theme/transitions";
 
 const ContactSectionHeader = styled.h2`
   font-size: clamp(40px, 5vw, 60px);
@@ -29,19 +31,27 @@ const ContactSection: FC = () => {
     <section id="contact" className="home-section">
       <Container>
         <ContactRoot>
-          <div className="contact-root-inner">
-            <ContactSectionHeader>Get In Touch</ContactSectionHeader>
-            <p>
-              Want to get in contact? I am currently open to new opportunities!
-            </p>
-            <EmailButton
-              color="primary"
-              as="a"
-              href={`mailto:${config.personal.email}`}
-            >
-              Say Hello
-            </EmailButton>
-          </div>
+          <AnimateInView
+            transitionProps={{
+              classNames: transitionNames.fadeUp,
+              timeout: 0,
+            }}
+          >
+            <div className="contact-root-inner">
+              <ContactSectionHeader>Get In Touch</ContactSectionHeader>
+              <p>
+                Want to get in contact? I am currently open to new
+                opportunities!
+              </p>
+              <EmailButton
+                color="primary"
+                as="a"
+                href={`mailto:${config.personal.email}`}
+              >
+                Say Hello
+              </EmailButton>
+            </div>
+          </AnimateInView>
         </ContactRoot>
       </Container>
     </section>
