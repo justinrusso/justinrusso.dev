@@ -1,6 +1,10 @@
+import { FC, PropsWithChildren } from "react";
 import styled from "styled-components";
 
-const SectionHeader = styled.h2`
+import AnimateInView from "./utils/AnimateInView";
+import { transitionNames } from "../theme/transitions";
+
+const StyledSectionHeader = styled.h2`
   display: flex;
   -webkit-box-align: center;
   align-items: center;
@@ -20,5 +24,18 @@ const SectionHeader = styled.h2`
     background-color: var(--color-divider);
   }
 `;
+
+const SectionHeader: FC<PropsWithChildren<unknown>> = ({ children }) => {
+  return (
+    <AnimateInView
+      as={StyledSectionHeader}
+      transitionProps={{
+        classNames: transitionNames.fadeUp,
+      }}
+    >
+      {children}
+    </AnimateInView>
+  );
+};
 
 export default SectionHeader;

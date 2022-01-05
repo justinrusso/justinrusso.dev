@@ -5,14 +5,23 @@ export const transitionDurations = {
 };
 
 export const transitionNames = {
+  fadeLeft: "fade-left",
   fadeRight: "fade-right",
+  fadeUp: "fade-up",
   fade: "fade",
 };
 
 const transitions = css`
-  .${transitionNames.fadeRight} {
+  .${transitionNames.fadeLeft},
+    .${transitionNames.fadeRight},
+    .${transitionNames.fadeUp} {
     transition: opacity ${transitionDurations.fade}ms ease,
       transform ${transitionDurations.fade}ms ease;
+  }
+
+  .${transitionNames.fadeLeft}-enter {
+    opacity: 0;
+    transform: translate3d(100px, 0, 0);
   }
 
   .${transitionNames.fadeRight}-enter {
@@ -20,13 +29,20 @@ const transitions = css`
     transform: translate3d(-100px, 0, 0);
   }
 
-  .${transitionNames.fadeRight}-enter-active {
+  .${transitionNames.fadeUp}-enter {
+    opacity: 0;
+    transform: translate3d(0, 100px, 0);
+  }
+
+  .${transitionNames.fadeLeft}-enter-active,
+    .${transitionNames.fadeRight}-enter-active,
+    .${transitionNames.fadeUp}-enter-active {
     opacity: 1;
     transform: translateZ(0);
   }
 
   .${transitionNames.fade} {
-    transition: opacity ${transitionDurations.fade}ms ease;
+    transition: opacity ${transitionDurations.fade}ms var(--easing);
   }
 
   .${transitionNames.fade}-enter {

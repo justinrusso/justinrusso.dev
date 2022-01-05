@@ -3,6 +3,9 @@ import styled from "styled-components";
 import { FC, PropsWithChildren } from "react";
 import { FiExternalLink, FiGithub } from "react-icons/fi";
 
+import AnimateInView from "./utils/AnimateInView";
+import { transitionNames } from "../theme/transitions";
+
 const ProjectRoot = styled.li`
   position: relative;
   display: grid;
@@ -144,7 +147,12 @@ const Project: FC<PropsWithChildren<ProjectProps>> = ({
   const primaryLink = url || repoUrl || "#";
 
   return (
-    <ProjectRoot>
+    <AnimateInView
+      as={ProjectRoot}
+      transitionProps={{
+        classNames: transitionNames.fadeUp,
+      }}
+    >
       <ProjectContent>
         <h3 className="project-title">
           <a href={primaryLink} rel="noopener noreferrer" target="_blank">
@@ -185,7 +193,7 @@ const Project: FC<PropsWithChildren<ProjectProps>> = ({
           )}
         </a>
       </ProjectImageWrapper>
-    </ProjectRoot>
+    </AnimateInView>
   );
 };
 

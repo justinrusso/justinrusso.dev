@@ -13,6 +13,8 @@ const Head: FC = () => {
     <NextHead>
       <title>Justin Russo</title>
 
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+
       <meta name="description" content={seo.description} />
       {seo.image && <meta name="image" content={seo.image} />}
 

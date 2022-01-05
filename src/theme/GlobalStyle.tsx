@@ -93,7 +93,8 @@ const GlobalStyle = createGlobalStyle`
     --text-primary-opacity: 0.87;
     --text-secondary-opacity: 0.6;
 
-    --transition: all 200ms cubic-bezier(0.65, 0, 0.35, 1);
+    --easing: cubic-bezier(0.65, 0, 0.35, 1);
+    --transition: all 200ms var(--easing);
   }
 
   :root.dark {
