@@ -1,8 +1,10 @@
 import { FC } from "react";
 import NextHead from "next/head";
 
+import config from "../config";
+
 const seo = {
-  description: "Justin Russo is a full-stack software engineer.",
+  description: config.personal.shortDescription,
   image: null,
   title: "Justin Russo",
   url: "https://justinrusso.dev",

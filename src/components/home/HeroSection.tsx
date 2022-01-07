@@ -97,10 +97,7 @@ const HeroSection: FC = () => {
             transitionDelay: "400ms",
           }}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec
-          dui felis. Sed ultrices diam et tincidunt ornare. Ut sit amet gravida
-          massa. Aliquam non turpis commodo, accumsan mi ut, ullamcorper nisi.
-          Suspendisse vitae nisi dignissim nibh fringilla fringilla non id quam.
+          {config.personal.longDescription}
         </AnimateInView>
       </HeroRoot>
     </Container>
