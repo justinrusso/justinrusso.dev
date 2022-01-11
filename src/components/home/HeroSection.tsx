@@ -45,8 +45,10 @@ const HeroRoot = styled.section`
     padding: 20px 0 0;
   }
 
-  .no-wrap {
-    white-space: nowrap;
+  @media (min-width: 600px) {
+    .no-wrap {
+      white-space: nowrap;
+    }
   }
 `;
 
