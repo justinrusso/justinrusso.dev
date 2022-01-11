@@ -121,7 +121,6 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.3;
     font-size: 18px;
     font-weight: 400;
-    overflow-x: hidden;
   }
 
   /* Scrollbar Styles */
