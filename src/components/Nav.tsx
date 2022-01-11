@@ -79,7 +79,7 @@ const MenuIcon = styled.div`
 
 const Sidebar = styled.div`
   width: 320px;
-  height: 100vh;
+  height: 100%;
   position: fixed;
   top: 0px;
   left: 0;
