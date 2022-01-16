@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     if (process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS) {
       ReactGA.initialize(process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS, {
-        testMode: process.env.VERCEL_ENV !== "production",
+        testMode: process.env.NEXT_PUBLIC_VERCEL_ENV !== "production",
       });
     }
   }, []);
