@@ -7,6 +7,7 @@ import { FC, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 import Button from "./common/Button";
+import FullLogo from "./logo/FullLogo";
 import Social from "./Social";
 import config from "../config";
 import { transitionNames } from "../theme/transitions";
@@ -346,13 +347,8 @@ const Nav: FC = () => {
               {isMounted && (
                 <CSSTransition classNames="fade" timeout={transitionTimeout}>
                   <div className="logo fade">
-                    <Link href="/">
-                      {/* <img
-                      className="logo_light"
-                      src={`img/logo/${logo2}.png`}
-                      alt="brand"
-                    /> */}
-                      Logo
+                    <Link href="/" passHref>
+                      <FullLogo as="a" />
                     </Link>
                   </div>
                 </CSSTransition>
