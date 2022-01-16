@@ -348,7 +348,9 @@ const Nav: FC = () => {
                 <CSSTransition classNames="fade" timeout={transitionTimeout}>
                   <div className="logo fade">
                     <Link href="/" passHref>
-                      <FullLogo as="a" />
+                      <a>
+                        <FullLogo />
+                      </a>
                     </Link>
                   </div>
                 </CSSTransition>
