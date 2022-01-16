@@ -8,6 +8,7 @@ import GlobalStyle from "../theme/GlobalStyle";
 
 const Main = styled.main`
   width: 100%;
+  overflow-x: hidden;
   transition: all 0.5s ease;
   @media screen and (min-width: 1200px) {
     padding-left: 288px;

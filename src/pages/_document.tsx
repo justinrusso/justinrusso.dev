@@ -22,7 +22,7 @@ class MyDocument extends Document {
         <Head>
           <meta charSet="utf-8" />
           {/* <link rel="icon" href="/favicon.ico" /> */}
-          <meta name="theme-color" content="#000000" />
+          <meta name="theme-color" content="#0d1b27" />
           {/* <link rel="apple-touch-icon" href="/logo192.png" /> */}
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />

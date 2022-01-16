@@ -95,7 +95,13 @@ const AboutSection: FC = () => {
               <h3>
                 Hi, I&apos;m <span>{config.personal.name}</span>
               </h3>
-              <p>{config.personal.longDescription}</p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+                nec dui felis. Sed ultrices diam et tincidunt ornare. Ut sit
+                amet gravida massa. Aliquam non turpis commodo, accumsan mi ut,
+                ullamcorper nisi. Suspendisse vitae nisi dignissim nibh
+                fringilla fringilla non id quam.
+              </p>
             </div>
             <div className="skills">
               <p className="desc">
