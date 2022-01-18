@@ -67,13 +67,13 @@ const Intro: FC<IntroProps> = ({ onComplete }) => {
   useEffect(() => {
     setTimeout(() => {
       setMounted(true);
-    });
+    }, 100);
   }, []);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
       onComplete();
-    }, 1600);
+    }, 1700);
 
     return () => clearTimeout(timeout);
   }, [onComplete]);
