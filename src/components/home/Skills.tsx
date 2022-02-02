@@ -6,7 +6,8 @@ import config from "../../config";
 const SkillsRoot = styled.ul`
   width: 100%;
   display: grid;
-  padding-top: 20px;
+  padding-top: 15px;
+  padding-left: 0;
   flex-wrap: wrap;
   grid-template-columns: max-content max-content;
   column-gap: 20px;

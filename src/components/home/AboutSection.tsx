@@ -25,12 +25,11 @@ const AboutRoot = styled.section`
 
   .info {
     width: 100%;
-    padding-bottom: 55px;
 
     h3 {
       font-size: 22px;
       font-weight: 400;
-      margin-bottom: 15px;
+      margin-bottom: 5px;
 
       span {
         font-weight: 600;
@@ -39,6 +38,7 @@ const AboutRoot = styled.section`
 
     p {
       max-width: 90%;
+      margin-bottom: 15px;
 
       @media (max-width: 1040px) {
         max-width: 100%;
@@ -96,11 +96,19 @@ const AboutSection: FC = () => {
                 Hi, I&apos;m <span>{config.personal.name}</span>
               </h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-                nec dui felis. Sed ultrices diam et tincidunt ornare. Ut sit
-                amet gravida massa. Aliquam non turpis commodo, accumsan mi ut,
-                ullamcorper nisi. Suspendisse vitae nisi dignissim nibh
-                fringilla fringilla non id quam.
+                As a former IT Administrator I enjoyed solving tough problems,
+                working with a diverse team, and creating tools to automate some
+                of my workflow. Over the last 5 years while working in IT, I
+                taught myself CSS, JavaScript, TypeScript, and various other
+                languages and libraries while working on projects of my own or
+                with a team. Through one of these projects, I helped raise over
+                $200,000 for the Extra Life charity.
+              </p>
+              <p>
+                In my spare time, I continue to develop projects for myself or
+                for clients. I&apos;ve been working on an in-development project
+                that will enable a new level of interactivity between viewers
+                and broadcasters on Twitch.
               </p>
             </div>
             <div className="skills">
