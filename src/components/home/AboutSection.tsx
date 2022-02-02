@@ -102,13 +102,13 @@ const AboutSection: FC = () => {
                 taught myself CSS, JavaScript, TypeScript, and various other
                 languages and libraries while working on projects of my own or
                 with a team. Through one of these projects, I helped raise over
-                $200,000 for the Extra Life chairity.
+                $200,000 for the Extra Life charity.
               </p>
               <p>
                 In my spare time, I continue to develop projects for myself or
-                for clients. I&apos;ve continuiously been working on an
-                in-development project that will enable a new level of
-                interactivity between viewers and broadcasters on Twitch.
+                for clients. I&apos;ve been working on an in-development project
+                that will enable a new level of interactivity between viewers
+                and broadcasters on Twitch.
               </p>
             </div>
             <div className="skills">
