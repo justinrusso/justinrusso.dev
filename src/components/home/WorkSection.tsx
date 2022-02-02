@@ -10,6 +10,26 @@ const WorkSection: FC = () => {
       <Container>
         <SectionHeader>Some of My Work</SectionHeader>
         <Project
+          name="Apartment Navigator"
+          url="https://apartment-navigator.herokuapp.com/"
+          imageSrc="https://res.cloudinary.com/dutbmygnx/image/upload/v1643783489/ss-home_dk32rx.jpg"
+          repoUrl="https://github.com/justinrusso/apartment-navigator/"
+          tech={[
+            "TypeScript",
+            "React",
+            "Redux",
+            "styled-components",
+            "Python",
+            "Flask",
+            "PostgreSQL",
+            "Docker",
+          ]}
+        >
+          Apartment Navigator is the place to find your next amazing place to
+          live! Inspired by aspects of Apartments.com and Zillow, Apartment
+          Navigator helps potential renters discover locations to lease.
+        </Project>
+        <Project
           name="Slurp"
           url="https://jrusso-slurp.herokuapp.com/"
           imageSrc="https://github.com/justinrusso/Slurp/blob/main/docs/images/homepage_ss.jpg?raw=true"

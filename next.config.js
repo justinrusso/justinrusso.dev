@@ -5,7 +5,7 @@ module.exports = {
     defaultLocale: "en",
   },
   images: {
-    domains: ["github.com"],
+    domains: ["github.com", "res.cloudinary.com"],
   },
   reactStrictMode: true,
 };
