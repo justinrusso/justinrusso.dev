@@ -40,6 +40,16 @@ const WorkSection: FC = () => {
           inspired by Yelp.
         </Project>
         <Project
+          name="Darkosto.com"
+          url="https://darkosto.com/"
+          imageSrc="https://res.cloudinary.com/dutbmygnx/image/upload/c_scale,w_1375/v1643785961/darkosto_w6zlpz.jpg"
+          tech={["TypeScript", "JavaScript", "Node.js", "Next.js", "React"]}
+        >
+          A website developed for a Twitch broadcaster to provide information
+          and enable a simplified process for business inquiries. Backed by a
+          CMS, the client is provided easy access to update necessary data.
+        </Project>
+        <Project
           name="CodeX"
           url="https://codexappaa.herokuapp.com/"
           imageSrc="https://github.com/kvh8899/week13-project/raw/main/docs/images/screens-readme/homepage.png"
