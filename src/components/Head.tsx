@@ -3,11 +3,12 @@ import NextHead from "next/head";
 
 import config from "../config";
 
+const url = "https://justinrusso.dev";
 const seo = {
   description: config.personal.shortDescription,
-  image: null,
+  image: `${url}/images/og.png`,
   title: "Justin Russo",
-  url: "https://justinrusso.dev",
+  url,
 };
 
 const Head: FC = () => {
