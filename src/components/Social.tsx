@@ -28,14 +28,19 @@ const IconButton = styled.a`
   &:hover {
     transform: translateY(-3px);
     color: var(--color-primary-main);
-    svg {
-    }
   }
+
   svg {
-    fill: transparent;
     color: inherit;
-    width: 22px;
+    fill: transparent;
     height: 22px;
+    width: 22px;
+  }
+
+  &[title="AngelList"] {
+    svg {
+      fill: currentColor;
+    }
   }
 `;
 

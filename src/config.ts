@@ -1,5 +1,6 @@
-import { FiGithub, FiLinkedin, FiMail, FiUser } from "react-icons/fi";
 import { BsJournalCode } from "react-icons/bs";
+import { FaAngellist } from "react-icons/fa";
+import { FiGithub, FiLinkedin, FiMail, FiUser } from "react-icons/fi";
 
 const config = {
   navLinks: [
@@ -26,6 +27,11 @@ const config = {
       Icon: FiLinkedin,
       name: "LinkedIn",
       url: "https://www.linkedin.com/in/justin-k-russo/",
+    },
+    {
+      Icon: FaAngellist,
+      name: "AngelList",
+      url: "https://angel.co/u/justin-k-russo",
     },
   ],
 
