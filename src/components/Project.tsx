@@ -174,6 +174,7 @@ const ProjectImageWrapper = styled.div`
     vertical-align: middle;
     position: relative;
     transition: var(--transition);
+    background-color: var(--color-primary-dark);
 
     &:before {
       content: "";
@@ -182,32 +183,27 @@ const ProjectImageWrapper = styled.div`
       height: 100%;
       inset: 0px;
       z-index: 3;
-      background-color: var(--color-bg);
       mix-blend-mode: screen;
-
-      @media (min-width: 900px) {
-        background-color: rgb(68, 0, 27);
-      }
+      transition: var(--transition);
+      border-radius: var(--border-radius);
+      background-color: var(--color-secondary-dark);
     }
 
-    @media (min-width: 900px) {
-      opacity: 0.5;
+    > span {
+      border-radius: var(--border-radius);
+      mix-blend-mode: multiply;
 
-      &:hover {
-        opacity: 1;
-
-        &:before {
-          background-color: transparent;
-        }
-      }
+      filter: brightness(50%);
     }
-  }
 
-  a > * {
-    opacity: 0.1 !important;
+    &:hover {
+      background-color: transparent;
+      outline: 0;
 
-    @media (min-width: 900px) {
-      opacity: 1 !important;
+      &:before,
+      > span {
+        background: transparent;
+      }
     }
   }
 `;
