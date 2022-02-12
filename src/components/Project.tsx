@@ -97,6 +97,9 @@ const TechList = styled.ul`
   z-index: 2;
   padding: 25px 0 10px;
   list-style: none;
+  filter: drop-shadow(0px 2px 1px rgba(0, 0, 0, 0.2))
+    drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.14))
+    drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.12));
 
   li {
     padding: 0 20px 5px 0;
