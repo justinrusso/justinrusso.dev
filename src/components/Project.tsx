@@ -107,6 +107,10 @@ const TechList = styled.ul`
   }
 
   @media (min-width: 900px) {
+    filter: drop-shadow(0px 2px 1px rgba(0, 0, 0, 0.2))
+      drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.14))
+      drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.12));
+
     ${ProjectRoot}:nth-of-type(2n+1) & {
       justify-content: flex-end;
 
@@ -174,6 +178,7 @@ const ProjectImageWrapper = styled.div`
     vertical-align: middle;
     position: relative;
     transition: var(--transition);
+    background-color: var(--color-primary-dark);
 
     &:before {
       content: "";
@@ -182,32 +187,31 @@ const ProjectImageWrapper = styled.div`
       height: 100%;
       inset: 0px;
       z-index: 3;
-      background-color: var(--color-bg);
       mix-blend-mode: screen;
+      transition: var(--transition);
+      border-radius: var(--border-radius);
+      background-color: var(--color-secondary-dark);
+    }
 
-      @media (min-width: 900px) {
-        background-color: rgb(68, 0, 27);
+    > span {
+      border-radius: var(--border-radius);
+      filter: brightness(50%);
+      mix-blend-mode: multiply;
+
+      height: 100% !important;
+      > * {
+        height: 100%;
       }
     }
 
-    @media (min-width: 900px) {
-      opacity: 0.5;
+    &:hover {
+      background-color: transparent;
+      outline: 0;
 
-      &:hover {
-        opacity: 1;
-
-        &:before {
-          background-color: transparent;
-        }
+      &:before,
+      > span {
+        background: transparent;
       }
-    }
-  }
-
-  a > * {
-    opacity: 0.1 !important;
-
-    @media (min-width: 900px) {
-      opacity: 1 !important;
     }
   }
 `;
@@ -275,6 +279,8 @@ const Project: FC<PropsWithChildren<ProjectProps>> = ({
               width={580}
               height={363}
               layout="responsive"
+              objectFit="cover"
+              priority={false}
             />
           )}
         </a>
