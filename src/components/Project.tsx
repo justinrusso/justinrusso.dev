@@ -191,9 +191,13 @@ const ProjectImageWrapper = styled.div`
 
     > span {
       border-radius: var(--border-radius);
+      filter: brightness(50%);
       mix-blend-mode: multiply;
 
-      filter: brightness(50%);
+      height: 100% !important;
+      > * {
+        height: 100%;
+      }
     }
 
     &:hover {
@@ -271,6 +275,8 @@ const Project: FC<PropsWithChildren<ProjectProps>> = ({
               width={580}
               height={363}
               layout="responsive"
+              objectFit="cover"
+              priority={false}
             />
           )}
         </a>
