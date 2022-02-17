@@ -417,7 +417,11 @@ const Nav: FC = () => {
           </div>
         </div>
       </Sidebar>
-      {menuOpen && <ModalBackground />}
+      {menuOpen && (
+        <ModalBackground
+          onClick={() => setMenuOpen((prevState) => !prevState)}
+        />
+      )}
     </>
   );
 };
