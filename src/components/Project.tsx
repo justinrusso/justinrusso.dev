@@ -13,7 +13,6 @@ const ProjectRoot = styled.li`
   grid-template-columns: repeat(12, 1fr);
   align-items: center;
   box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.5);
-  transition: var(--transition);
 
   &:not(:last-of-type) {
     margin-bottom: 70px;
@@ -25,7 +24,6 @@ const ProjectRoot = styled.li`
 
   @media (min-width: 900px) {
     box-shadow: none;
-    transition: none;
   }
 `;
 
