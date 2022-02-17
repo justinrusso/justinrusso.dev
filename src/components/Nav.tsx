@@ -10,7 +10,7 @@ import Button from "./common/Button";
 import FullLogo from "./logo/FullLogo";
 import Social from "./Social";
 import config from "../config";
-import { transitionNames } from "../theme/transitions";
+import { transitionDurations, transitionNames } from "../theme/transitions";
 import { underlinedLink } from "../theme/mixins";
 import { zIndexes } from "../theme/utils";
 
@@ -218,9 +218,27 @@ const ModalBackground = styled.div`
   right: 0;
   background: rgba(0, 0, 0, 0.5);
   z-index: ${zIndexes.modalBackground};
+  opacity: 0;
+  display: none;
+
+  &.${transitionNames.fade}-enter,
+    &.${transitionNames.fade}-enter-active,
+    &.${transitionNames.fade}-enter-done,
+    &.${transitionNames.fade}-exit,
+    &.${transitionNames.fade}-exit-active {
+    display: block;
+  }
 
   @media screen and (min-width: 1200px) {
     display: none;
+
+    &.${transitionNames.fade}-enter,
+      &.${transitionNames.fade}-enter-active,
+      &.${transitionNames.fade}-enter-done,
+      &.${transitionNames.fade}-exit,
+      &.${transitionNames.fade}-exit-active {
+      display: none;
+    }
   }
 `;
 
@@ -417,11 +435,16 @@ const Nav: FC = () => {
           </div>
         </div>
       </Sidebar>
-      {menuOpen && (
+      <CSSTransition
+        classNames={transitionNames.fade}
+        timeout={transitionDurations.fade}
+        in={menuOpen}
+      >
         <ModalBackground
+          className="fade"
           onClick={() => setMenuOpen((prevState) => !prevState)}
         />
-      )}
+      </CSSTransition>
     </>
   );
 };
