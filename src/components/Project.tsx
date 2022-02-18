@@ -188,7 +188,7 @@ const ProjectImageWrapper = styled.div`
       mix-blend-mode: screen;
       transition: var(--transition);
       border-radius: var(--border-radius);
-      background-color: var(--color-secondary-dark);
+      background-color: var(--color-bg);
     }
 
     > span {
