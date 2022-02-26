@@ -37,12 +37,15 @@ const getElevationLightness = (elevation: Elevation): number => {
   switch (elevation) {
     case 1: {
       lightness = hslColors.bg.dark.l + 1.5;
+      break;
     }
     case 2: {
       lightness = hslColors.bg.dark.l + 3;
+      break;
     }
     default:
       lightness = hslColors.bg.dark.l;
+      break;
   }
 
   // Return the lightness, capped at 100
