@@ -49,8 +49,15 @@ const transitions = css`
     opacity: 0;
   }
 
-  .${transitionNames.fade}-enter-active {
+  .${transitionNames.fade}-enter-active, .${transitionNames.fade}-enter-done {
     opacity: 1;
+  }
+
+  .${transitionNames.fade}-exit {
+    opacity: 1;
+  }
+  .${transitionNames.fade}-exit-active, .${transitionNames.fade}-exit-done {
+    opacity: 0;
   }
 `;
 

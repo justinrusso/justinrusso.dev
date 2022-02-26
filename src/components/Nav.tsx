@@ -10,7 +10,7 @@ import Button from "./common/Button";
 import FullLogo from "./logo/FullLogo";
 import Social from "./Social";
 import config from "../config";
-import { transitionNames } from "../theme/transitions";
+import { transitionDurations, transitionNames } from "../theme/transitions";
 import { underlinedLink } from "../theme/mixins";
 import { zIndexes } from "../theme/utils";
 
@@ -218,9 +218,27 @@ const ModalBackground = styled.div`
   right: 0;
   background: rgba(0, 0, 0, 0.5);
   z-index: ${zIndexes.modalBackground};
+  opacity: 0;
+  display: none;
+
+  &.${transitionNames.fade}-enter,
+    &.${transitionNames.fade}-enter-active,
+    &.${transitionNames.fade}-enter-done,
+    &.${transitionNames.fade}-exit,
+    &.${transitionNames.fade}-exit-active {
+    display: block;
+  }
 
   @media screen and (min-width: 1200px) {
     display: none;
+
+    &.${transitionNames.fade}-enter,
+      &.${transitionNames.fade}-enter-active,
+      &.${transitionNames.fade}-enter-done,
+      &.${transitionNames.fade}-exit,
+      &.${transitionNames.fade}-exit-active {
+      display: none;
+    }
   }
 `;
 
@@ -257,6 +275,10 @@ const NavButton = styled(Button)`
   &.active:before {
     width: 100%;
   }
+`;
+
+const ResumeButtonWrapper = styled.div`
+  padding-top: 20px;
 `;
 
 const Nav: FC = () => {
@@ -370,6 +392,30 @@ const Nav: FC = () => {
               ) : (
                 NavLinks
               )}
+              <TransitionGroup component={null}>
+                {isMounted && (
+                  <CSSTransition
+                    classNames={transitionNames.fadeRight}
+                    timeout={transitionTimeout}
+                  >
+                    <ResumeButtonWrapper
+                      className={transitionNames.fadeRight}
+                      style={{
+                        transitionDelay: `${400}ms`,
+                      }}
+                    >
+                      <Button
+                        as="a"
+                        href={config.personal.resumeUrl}
+                        color="primary"
+                        target="_blank"
+                      >
+                        Resume
+                      </Button>
+                    </ResumeButtonWrapper>
+                  </CSSTransition>
+                )}
+              </TransitionGroup>
             </nav>
           </div>
 
@@ -417,7 +463,16 @@ const Nav: FC = () => {
           </div>
         </div>
       </Sidebar>
-      {menuOpen && <ModalBackground />}
+      <CSSTransition
+        classNames={transitionNames.fade}
+        timeout={transitionDurations.fade}
+        in={menuOpen}
+      >
+        <ModalBackground
+          className="fade"
+          onClick={() => setMenuOpen((prevState) => !prevState)}
+        />
+      </CSSTransition>
     </>
   );
 };

@@ -23,6 +23,8 @@ const WorkSection: FC = () => {
             "Flask",
             "PostgreSQL",
             "Docker",
+            "AWS S3",
+            "Heroku",
           ]}
         >
           Apartment Navigator is the place to find your next amazing place to

@@ -5,6 +5,7 @@ import { FiExternalLink, FiGithub } from "react-icons/fi";
 
 import AnimateInView from "./utils/AnimateInView";
 import { transitionNames } from "../theme/transitions";
+import { elevation } from "../theme/mixins";
 
 const ProjectRoot = styled.li`
   position: relative;
@@ -13,7 +14,6 @@ const ProjectRoot = styled.li`
   grid-template-columns: repeat(12, 1fr);
   align-items: center;
   box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.5);
-  transition: var(--transition);
 
   &:not(:last-of-type) {
     margin-bottom: 70px;
@@ -25,7 +25,6 @@ const ProjectRoot = styled.li`
 
   @media (min-width: 900px) {
     box-shadow: none;
-    transition: none;
   }
 `;
 
@@ -79,11 +78,7 @@ const ProjectContent = styled.div`
     pointer-events: auto;
 
     @media (min-width: 900px) {
-      background-color: var(--color-bg);
-      background-image: linear-gradient(
-        rgba(255, 255, 255, 0.07),
-        rgba(255, 255, 255, 0.07)
-      );
+      ${elevation(2)}
       box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.5);
       padding: 25px;
     }
@@ -190,7 +185,7 @@ const ProjectImageWrapper = styled.div`
       mix-blend-mode: screen;
       transition: var(--transition);
       border-radius: var(--border-radius);
-      background-color: var(--color-secondary-dark);
+      background-color: var(--color-bg);
     }
 
     > span {

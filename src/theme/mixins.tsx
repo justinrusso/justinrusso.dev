@@ -1,4 +1,5 @@
 import { css } from "styled-components";
+import { hslColors } from "./utils";
 
 export const underlinedLink = css<{ underlineColorVar?: string }>`
   position: relative;
@@ -22,5 +23,43 @@ export const underlinedLink = css<{ underlineColorVar?: string }>`
       right: auto;
       width: 100%;
     }
+  }
+`;
+
+export type Elevation = 0 | 1 | 2;
+
+/**
+ * Generates the percentage of lightness for dark elevations
+ * @param elevation
+ */
+const getElevationLightness = (elevation: Elevation): number => {
+  let lightness;
+  switch (elevation) {
+    case 1: {
+      lightness = hslColors.bg.dark.l + 1.5;
+      break;
+    }
+    case 2: {
+      lightness = hslColors.bg.dark.l + 3;
+      break;
+    }
+    default:
+      lightness = hslColors.bg.dark.l;
+      break;
+  }
+
+  // Return the lightness, capped at 100
+  return Math.min(lightness, 100);
+};
+
+export const elevation = (elevation: Elevation) => css`
+  background-color: var(--color-bg);
+
+  .dark & {
+    background-color: hsl(
+      ${hslColors.bg.dark.h},
+      ${`${hslColors.bg.dark.s}%`},
+      ${`${getElevationLightness(elevation)}%`}
+    );
   }
 `;
