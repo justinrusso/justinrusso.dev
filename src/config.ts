@@ -42,6 +42,8 @@ const config = {
       "I'm a passionate software engineer driven by the desire to create new, amazing experiences. Since creating my first application for Twitch and seeing it in action, I was obsessed with creating solutions to solve problems and enhance users' experiences.",
     name: "Justin Russo",
     email: "justin@justinrusso.dev",
+    resumeUrl:
+      "https://justinrusso.s3.amazonaws.com/portfolio/Russo_Justin_Web_Resume.pdf",
   },
 
   recentSkills: [

@@ -5,6 +5,7 @@ import AnimateInView from "../utils/AnimateInView";
 import config from "../../config";
 import Container from "../common/Container";
 import { transitionNames } from "../../theme/transitions";
+import Button from "../common/Button";
 
 const HeroRoot = styled.section`
   width: 100%;
@@ -43,6 +44,10 @@ const HeroRoot = styled.section`
   p {
     max-width: 540px;
     padding: 20px 0 0;
+  }
+
+  .button-wrapper {
+    padding-top: 20px;
   }
 
   @media (min-width: 600px) {
@@ -100,6 +105,24 @@ const HeroSection: FC = () => {
           }}
         >
           {config.personal.longDescription}
+        </AnimateInView>
+        <AnimateInView
+          className="button-wrapper"
+          transitionProps={{
+            classNames: transitionNames.fadeUp,
+          }}
+          style={{
+            transitionDelay: "500ms",
+          }}
+        >
+          <Button
+            as="a"
+            href={config.personal.resumeUrl}
+            color="primary"
+            target="_blank"
+          >
+            Resume
+          </Button>
         </AnimateInView>
       </HeroRoot>
     </Container>
