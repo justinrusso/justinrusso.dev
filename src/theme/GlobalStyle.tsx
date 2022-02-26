@@ -1,6 +1,7 @@
 import { createGlobalStyle, css } from "styled-components";
 
 import transitions from "./transitions";
+import { hslColors } from "./utils";
 
 /*
   Josh's Custom CSS Reset

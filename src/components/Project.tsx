@@ -5,6 +5,7 @@ import { FiExternalLink, FiGithub } from "react-icons/fi";
 
 import AnimateInView from "./utils/AnimateInView";
 import { transitionNames } from "../theme/transitions";
+import { elevation } from "../theme/mixins";
 
 const ProjectRoot = styled.li`
   position: relative;
@@ -77,11 +78,7 @@ const ProjectContent = styled.div`
     pointer-events: auto;
 
     @media (min-width: 900px) {
-      background-color: var(--color-bg);
-      background-image: linear-gradient(
-        rgba(255, 255, 255, 0.07),
-        rgba(255, 255, 255, 0.07)
-      );
+      ${elevation(2)}
       box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.5);
       padding: 25px;
     }
